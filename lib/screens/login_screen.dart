@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_signin_button/button_list.dart';
+import 'package:flutter_signin_button/button_view.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import 'home_screen.dart';
+import '../widgets/sign_up_button.dart';
+import 'main_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -36,12 +40,30 @@ class _LoginScreenState extends State<LoginScreen> {
                   )
                 ],
               ),
-              Text(
-                'Легко\nкодить\nлегко',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 46,
-                  fontWeight: FontWeight.w800,
+              Container(
+                child: Column(
+                  children: [
+                    Container(
+                      decoration: const BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [Colors.cyan, Colors.indigo],
+                        ),
+                      ),
+                      child: const Text(
+                        'Code',
+                        style: TextStyle(
+                            fontSize: 46, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    const Text(
+                      'Anywhere.\nFaster.\nTogether.',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 46,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
                 ),
               ),
               Container(
@@ -90,28 +112,29 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     const SizedBox(height: 10),
                     Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 25),
-                        child: InkWell(
-                          onTap: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => Home()));
-                          },
-                          child: Container(
-                            width: double.infinity,
-                            padding: const EdgeInsets.all(20),
-                            decoration: const BoxDecoration(
-                              color: Colors.deepPurple,
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(10),
-                              ),
-                            ),
-                            child: const Text(
-                              'Sign in',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(color: Colors.white),
+                      padding: const EdgeInsets.symmetric(horizontal: 25),
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.of(context).push(
+                              MaterialPageRoute(builder: (context) => MainScreen()));
+                        },
+                        child: Container(
+                          width: double.infinity,
+                          padding: const EdgeInsets.all(20),
+                          decoration: const BoxDecoration(
+                            color: Colors.deepPurple,
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(10),
                             ),
                           ),
-                        )),
+                          child: const Text(
+                            'Sign in',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                      ),
+                    ),
                     const SizedBox(
                       height: 10,
                     ),
@@ -130,12 +153,24 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                     ),
+                    Text(
+                      'or use',
+                      style: Theme.of(context).textTheme.headline5,
+                    ),
+                    Container(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SignUpButton(icon: FontAwesomeIcons.google,),
+                          SignUpButton(icon: FontAwesomeIcons.facebook,),
+                          SignUpButton(icon: FontAwesomeIcons.github,),
+                          SignUpButton(icon: FontAwesomeIcons.linkedin,),
+                        ],
+                      ),
+                    )
                   ],
                 ),
               ),
-              const SizedBox(
-                height: 10,
-              )
             ],
           ),
         ),

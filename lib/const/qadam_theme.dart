@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class QadamTheme {
-  static TextTheme lightTextTheme = TextTheme(
+  static TextTheme lightTextTheme = const TextTheme(
 
     bodyText1: TextStyle(
       fontSize: 14.0,
@@ -40,7 +40,7 @@ class QadamTheme {
     ),
   );
 
-  static TextTheme darkTextTheme = TextTheme(
+  static TextTheme darkTextTheme = const TextTheme(
 
     bodyText1: TextStyle(
       fontSize: 14.0,
@@ -81,6 +81,7 @@ class QadamTheme {
 
   static ThemeData light() {
     return ThemeData(
+      backgroundColor: Colors.black12,
       fontFamily: 'Raleway',
       brightness: Brightness.light,
       checkboxTheme: CheckboxThemeData(
@@ -105,6 +106,7 @@ class QadamTheme {
 
   static ThemeData dark() {
     return ThemeData(
+      backgroundColor: Colors.white24,
       fontFamily: 'Raleway',
       brightness: Brightness.dark,
       appBarTheme: AppBarTheme(

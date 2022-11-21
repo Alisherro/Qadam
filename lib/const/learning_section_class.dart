@@ -1,5 +1,7 @@
 import 'dart:ui';
 
+import 'package:flutter/material.dart';
+
 class LearningSection {
   final String title;
   final String subtitle;
@@ -7,5 +9,7 @@ class LearningSection {
   final Color rightColor;
 
   LearningSection(this.title, this.subtitle,this.leftColor, this.rightColor);
+
+
 }
 
