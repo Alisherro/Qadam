@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../const/learning_section_class.dart';
+import '../const/programming_language.dart';
 import '../const/tab_manager.dart';
+import '../screens/python_course_screen.dart';
 import 'gradient_card_widget.dart';
 
 class LearningSectionWidget extends StatelessWidget {
-  final LearningSection data;
+  final ProgrammingLanguage data;
 
   const LearningSectionWidget({Key? key, required this.data}) : super(key: key);
 
@@ -17,7 +19,8 @@ class LearningSectionWidget extends StatelessWidget {
       child: InkWell(
         splashColor: Colors.transparent,
         onTap: () {
-          Provider.of<TabManager>(context, listen: false).goToTab(1);
+          Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => PythonCourseScreen()));
         },
         child: Container(
           child: Stack(
@@ -25,12 +28,12 @@ class LearningSectionWidget extends StatelessWidget {
               GradientCardWidget(
                   color1: data.leftColor, color2: data.rightColor),
               Positioned(
-                left: 15,
-                top: 15,
+                left: 10,
+                top: 12,
                 child: Text(
-                  data.title,
+                  data.name,
                   style: const TextStyle(
-                    fontSize: 32.0,
+                    fontSize: 48.0,
                     fontWeight: FontWeight.w400,
                     color: Colors.white,
                   ),
@@ -39,8 +42,8 @@ class LearningSectionWidget extends StatelessWidget {
               ),
               Positioned(
                 left: 15,
-                top: 50,
-                child: Text(data.subtitle,
+                top: 67,
+                child: Text(data.difficulty,
                     style: const TextStyle(
                       fontSize: 16.0,
                       fontWeight: FontWeight.w400,
@@ -48,17 +51,22 @@ class LearningSectionWidget extends StatelessWidget {
                     ),
                     maxLines: 1),
               ),
-              const Positioned(
+              Positioned(
                 left: 15,
                 bottom: 10,
                 child: Text(
-                  'view more',
-                  style: TextStyle(
-                    fontSize: 12.0,
+                  '${data.lessonsAmount} lessons',
+                  style: const TextStyle(
+                    fontSize: 18.0,
                     fontWeight: FontWeight.w400,
                     color: Colors.white,
                   ),
                 ),
+              ),
+              const Positioned(
+                right: 15,
+                top: 60,
+                child: Icon(Icons.arrow_forward_ios),
               )
             ],
           ),

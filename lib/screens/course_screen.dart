@@ -13,28 +13,36 @@ class CourseScreen extends StatelessWidget {
       'C++',
       10,
       'Easy',
-      65
+      65,
+      Colors.indigo,
+      Colors.cyan,
     ),
     ProgrammingLanguage(
       'https://s0.rbk.ru/v6_top_pics/media/img/1/60/756533742439601.jpg',
       'Java',
       10,
       'Easy',
-      35
+      35,
+      Color(0xff6cc6cb),
+      Color(0xffeae5c9),
     ),
     ProgrammingLanguage(
       'https://www.pngitem.com/pimgs/m/480-4800518_file-dart-logo-dart-programming-language-logo-hd.png',
       'Dart',
       10,
       'Easy',
-      10
+      10,
+      Color(0xff7dc387),
+      Color(0xffdbe9ea),
     ),
     ProgrammingLanguage(
       'https://www.freecodecamp.org/news/content/images/2021/10/golang.png',
       'Go',
       10,
       'Easy',
-      100
+      100,
+      Color(0xff7dc387),
+      Color(0xffdbe9ea),
     ),
   ];
 
@@ -56,7 +64,7 @@ class CourseScreen extends StatelessWidget {
             itemCount: languages.length,
             itemBuilder: (context, int index) {
               return CourseProgressIndicator(
-                language : languages[index],
+                language: languages[index],
               );
             },
           ),
