@@ -25,7 +25,7 @@ class CircleStory extends StatelessWidget {
           language.name,
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
-          style: TextStyle(
+          style: const TextStyle(
             fontWeight: FontWeight.w600,
             fontSize: 16
           ),
