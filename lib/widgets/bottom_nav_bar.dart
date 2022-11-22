@@ -22,11 +22,11 @@ class BottomNavBar extends StatelessWidget {
           gap: 8,
           tabs: const [
             GButton(
-              icon: Icons.home,
+              icon: Icons.home_outlined,
               text: 'Home',
             ),
             GButton(
-              icon: Icons.favorite_border,
+              icon: Icons.star_outline_rounded,
               text: 'Courses',
             ),
             GButton(
