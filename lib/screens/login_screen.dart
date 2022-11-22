@@ -73,8 +73,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       padding: const EdgeInsets.symmetric(horizontal: 25.0),
                       child: Container(
                         decoration: BoxDecoration(
-                            color: Colors.grey[200],
-                            border: Border.all(color: Colors.white),
+                            color: Colors.white,
+                            border: Border.all(color: Colors.grey.shade300),
                             borderRadius: BorderRadius.circular(12)),
                         child: const Padding(
                           padding: EdgeInsets.only(left: 20, right: 10),
@@ -95,17 +95,18 @@ class _LoginScreenState extends State<LoginScreen> {
                       padding: const EdgeInsets.symmetric(horizontal: 25.0),
                       child: Container(
                         decoration: BoxDecoration(
-                            color: Colors.grey[200],
-                            border: Border.all(color: Colors.white),
+                            color: Colors.white,
+                            border: Border.all(color: Colors.grey.shade300),
                             borderRadius: BorderRadius.circular(12)),
                         child: const Padding(
                           padding: EdgeInsets.only(left: 20, right: 10),
                           child: TextField(
                             obscureText: true,
                             decoration: InputDecoration(
-                                border: InputBorder.none,
-                                hintText: 'Password',
-                                hintStyle: TextStyle(color: Colors.grey)),
+                              border: InputBorder.none,
+                              hintText: 'Password',
+                              hintStyle: TextStyle(color: Colors.grey),
+                            ),
                           ),
                         ),
                       ),
@@ -115,8 +116,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       padding: const EdgeInsets.symmetric(horizontal: 25),
                       child: InkWell(
                         onTap: () {
-                          Navigator.of(context).push(
-                              MaterialPageRoute(builder: (context) => MainScreen()));
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => MainScreen()));
                         },
                         child: Container(
                           width: double.infinity,
@@ -161,10 +162,18 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          SignUpButton(icon: FontAwesomeIcons.google,),
-                          SignUpButton(icon: FontAwesomeIcons.facebook,),
-                          SignUpButton(icon: FontAwesomeIcons.github,),
-                          SignUpButton(icon: FontAwesomeIcons.linkedin,),
+                          SignUpButton(
+                            icon: FontAwesomeIcons.google,
+                          ),
+                          SignUpButton(
+                            icon: FontAwesomeIcons.facebook,
+                          ),
+                          SignUpButton(
+                            icon: FontAwesomeIcons.github,
+                          ),
+                          SignUpButton(
+                            icon: FontAwesomeIcons.linkedin,
+                          ),
                         ],
                       ),
                     )

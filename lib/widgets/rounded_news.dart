@@ -8,28 +8,28 @@ class CircleStory extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          CircleAvatar(
-            backgroundColor: Theme.of(context).backgroundColor,
-            radius: 40,
-            child: CircleAvatar(
-              radius: 35,
-              backgroundImage: NetworkImage(language.imgUrl),
-            ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        CircleAvatar(
+          backgroundColor: Theme.of(context).backgroundColor,
+          radius: 35,
+          child: CircleAvatar(
+            radius: 30,
+            backgroundImage: NetworkImage(language.imgUrl),
           ),
-          const SizedBox(height: 5),
-          Text(
-            language.name,
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-            style: Theme.of(context).textTheme.headline5,
-          )
-        ],
-      ),
+        ),
+        const SizedBox(height: 5),
+        Text(
+          language.name,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+          style: TextStyle(
+            fontWeight: FontWeight.w600,
+            fontSize: 16
+          ),
+        )
+      ],
     );
   }
 }
