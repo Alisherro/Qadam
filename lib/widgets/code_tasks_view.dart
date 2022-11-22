@@ -10,7 +10,7 @@ class CodeTaskWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:const EdgeInsets.all(8),
+      padding: const EdgeInsets.all(8),
       child: Column(
         children: [
           Container(
@@ -26,7 +26,10 @@ class CodeTaskWidget extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 10),
-          Text(codeTask.difficulty, style: Theme.of(context).textTheme.headline6,)
+          Text(
+            codeTask.difficulty,
+            style: Theme.of(context).textTheme.headline6,
+          )
         ],
       ),
     );
