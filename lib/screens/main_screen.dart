@@ -22,9 +22,7 @@ class MainScreen extends StatelessWidget {
     return Consumer<TabManager>(
       builder: (context, tabManager, child) {
         return Scaffold(
-          body: SafeArea(
-            child: IndexedStack(index: tabManager.selectedTab, children: pages),
-          ),
+          body: IndexedStack(index: tabManager.selectedTab, children: pages),
           bottomNavigationBar: BottomNavBar(),
         );
       },

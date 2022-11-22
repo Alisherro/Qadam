@@ -5,7 +5,7 @@ import 'package:qadam/screens/login_screen.dart';
 import 'const/tab_manager.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
@@ -29,7 +29,7 @@ class _MyAppState extends State<MyApp> {
       create: (context)=>TabManager(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        theme: _iconBool?_lightTheme: _darkTheme ,
+        theme: _lightTheme,
         title: 'Qadam',
         home: LoginScreen(),
       ),

@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 
 import '../const/learning_section_class.dart';
 import '../const/tab_manager.dart';
-import '../screens/course_screen.dart';
 import 'gradient_card_widget.dart';
 
 class LearningSectionWidget extends StatelessWidget {
