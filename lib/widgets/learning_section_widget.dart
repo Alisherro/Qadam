@@ -14,7 +14,7 @@ class LearningSectionWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: InkWell(
         splashColor: Colors.transparent,
         onTap: () {
@@ -30,23 +30,35 @@ class LearningSectionWidget extends StatelessWidget {
                 top: 15,
                 child: Text(
                   data.title,
-                  style: Theme.of(context).textTheme.headline2,
+                  style: const TextStyle(
+                    fontSize: 32.0,
+                    fontWeight: FontWeight.w400,
+                    color: Colors.white,
+                  ),
+                  maxLines: 1,
                 ),
               ),
               Positioned(
                 left: 15,
                 top: 50,
-                child: Text(
-                  data.subtitle,
-                  style: Theme.of(context).textTheme.headline5,
-                ),
+                child: Text(data.subtitle,
+                    style: const TextStyle(
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.white,
+                    ),
+                    maxLines: 1),
               ),
-              Positioned(
+              const Positioned(
                 left: 15,
                 bottom: 10,
                 child: Text(
                   'view more',
-                  style: Theme.of(context).textTheme.headline6,
+                  style: TextStyle(
+                    fontSize: 12.0,
+                    fontWeight: FontWeight.w400,
+                    color: Colors.white,
+                  ),
                 ),
               )
             ],

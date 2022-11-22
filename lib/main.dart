@@ -29,7 +29,7 @@ class _MyAppState extends State<MyApp> {
       create: (context)=>TabManager(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        theme: _iconBool?_lightTheme:_darkTheme ,
+        theme: _iconBool?_lightTheme: _darkTheme ,
         title: 'Qadam',
         home: LoginScreen(),
       ),
