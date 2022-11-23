@@ -20,15 +20,15 @@ List<UnbordingContent> contents = [
       discription: "assets/images/fourth.jpg"),
 ];
 
-class LearningTopic extends StatefulWidget {
-  const LearningTopic({super.key});
+class PythonTopic1 extends StatefulWidget {
+  const PythonTopic1({super.key});
 
   @override
   // ignore: library_private_types_in_public_api
-  _LearningTopicState createState() => _LearningTopicState();
+  _PythonTopic1State createState() => _PythonTopic1State();
 }
 
-class _LearningTopicState extends State<LearningTopic> {
+class _PythonTopic1State extends State<PythonTopic1> {
   int currentIndex = 0;
   PageController? _controller;
 

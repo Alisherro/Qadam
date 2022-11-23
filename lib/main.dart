@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:qadam/const/qadam_theme.dart';
 import 'package:qadam/screens/learning_topic.dart';
 import 'package:qadam/screens/login_screen.dart';
+import 'package:qadam/screens/python_course_screen.dart';
 import 'package:qadam/screens/quiz.dart';
 import 'const/tab_manager.dart';
 
@@ -30,10 +31,15 @@ class _MyAppState extends State<MyApp> {
     return ChangeNotifierProvider<TabManager>(
       create: (context) => TabManager(),
       child: MaterialApp(
+        initialRoute: '/',
+        routes: {
+          '/': (context) => const LoginScreen(),
+          '/python':(context) =>  PythonCourseScreen(),
+          '/python/1':(context) =>  PythonTopic1(),
+        },
         debugShowCheckedModeBanner: false,
         theme: _lightTheme,
         title: 'Qadam',
-        home:  const LoginScreen(),
       ),
     );
   }

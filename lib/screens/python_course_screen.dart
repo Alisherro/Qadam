@@ -4,6 +4,7 @@ import 'package:qadam/screens/main_screen.dart';
 import '../const/python_course.dart';
 import '../widgets/bottom_nav_bar.dart';
 import '../widgets/course_topc_section_widget.dart';
+import 'learning_topic.dart';
 
 class PythonCourseScreen extends StatefulWidget {
   const PythonCourseScreen({Key? key}) : super(key: key);
@@ -17,19 +18,19 @@ class _PythonCourseScreenState extends State<PythonCourseScreen> {
 
   final List<PythonCourse> _courseList=[
     PythonCourse(
-      1, 'Introduction', '30 min', true
+      1, 'Введение', '30 min', true
     ),
     PythonCourse(
-      2, 'Conditionals', '60 min', false
+      2, 'Ввод и вывод данных', '60 min', true
     ),
     PythonCourse(
-        3, 'Functions', '60 min', false
+        3, 'Условный оператор', '60 min', false
     ),
     PythonCourse(
-        4, 'Loops', '60 min', false
+        4, 'Строки', '60 min', false
     ),
     PythonCourse(
-        5, 'Lists', '45 min', false
+        5, 'Циклы', '45 min', false
     ),
   ];
 
