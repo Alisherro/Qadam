@@ -30,9 +30,9 @@ class _MyAppState extends State<MyApp> {
       create: (context) => TabManager(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        theme: _darkTheme,
+        theme: _lightTheme,
         title: 'Qadam',
-        home: const LoginScreen(),
+        home:  const LoginScreen(),
       ),
     );
   }

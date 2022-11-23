@@ -40,11 +40,11 @@ class HomeScreen extends StatelessWidget {
     ProgrammingLanguage(
       'https://www.freecodecamp.org/news/content/images/2021/10/golang.png',
       'Go',
-      10,
+      15,
       'Easy',
       100,
-      Color(0xff7dc387),
-      Color(0xffdbe9ea),
+      Color(0xffa18cd1),
+      Color(0xfffbc2eb),
     ),
   ];
 
