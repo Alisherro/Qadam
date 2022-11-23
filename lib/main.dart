@@ -33,7 +33,7 @@ class _MyAppState extends State<MyApp> {
         debugShowCheckedModeBanner: false,
         theme: _lightTheme,
         title: 'Qadam',
-        home: const LoginScreen(),
+        home:  const LoginScreen(),
       ),
     );
   }
