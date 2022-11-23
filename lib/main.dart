@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:qadam/const/qadam_theme.dart';
 import 'package:qadam/screens/learning_topic.dart';
 import 'package:qadam/screens/login_screen.dart';
+import 'package:qadam/screens/quiz.dart';
 import 'const/tab_manager.dart';
 
 void main() {
