@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:provider/provider.dart';
 import 'package:qadam/const/tab_manager.dart';
 import 'package:qadam/screens/home_screen.dart';
-import '../const/learning_section_class.dart';
 import '../const/programming_language.dart';
 import '../widgets/bottom_nav_bar.dart';
-import '../widgets/learning_section_widget.dart';
 import 'code_editor_screen.dart';
 import 'course_screen.dart';
 
@@ -36,8 +33,8 @@ class MainScreen extends StatelessWidget {
         7,
         'Easy',
         35,
-        Color(0xff6cc6cb),
-        Color(0xffeae5c9),
+        const Color(0xff6cc6cb),
+        const Color(0xffeae5c9),
         [
           ProgrammingLanguageCourse(1, 'Введение', '30 min', false),
           ProgrammingLanguageCourse(2, 'Ввод и вывод данных', '60 min', false),
@@ -52,8 +49,8 @@ class MainScreen extends StatelessWidget {
         9,
         'Easy',
         10,
-        Color(0xff7dc387),
-        Color(0xffdbe9ea),
+        const Color(0xff7dc387),
+        const Color(0xffdbe9ea),
         [
           ProgrammingLanguageCourse(1, 'Введение', '30 min', false),
           ProgrammingLanguageCourse(2, 'Ввод и вывод данных', '60 min', false),
@@ -68,8 +65,8 @@ class MainScreen extends StatelessWidget {
         15,
         'Easy',
         100,
-        Color(0xffa18cd1),
-        Color(0xfffbc2eb),
+        const Color(0xffa18cd1),
+        const Color(0xfffbc2eb),
         [
           ProgrammingLanguageCourse(1, 'Введение', '30 min', false),
           ProgrammingLanguageCourse(2, 'Ввод и вывод данных', '60 min', false),
@@ -83,7 +80,7 @@ class MainScreen extends StatelessWidget {
   static List<Widget> pages = [
     HomeScreen( ),
     CourseScreen(),
-    CodeEditorScreen(),
+    const CodeEditorScreen(),
   ];
 
 

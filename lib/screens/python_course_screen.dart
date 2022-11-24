@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:qadam/screens/main_screen.dart';
 
 import '../const/python_course.dart';
-import '../widgets/bottom_nav_bar.dart';
 import '../widgets/course_topc_section_widget.dart';
-import 'learning_topic.dart';
 
 class PythonCourseScreen extends StatefulWidget {
   const PythonCourseScreen({Key? key}) : super(key: key);
@@ -28,7 +25,7 @@ class _PythonCourseScreenState extends State<PythonCourseScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             gradient: LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.centerRight,
@@ -61,11 +58,11 @@ class _PythonCourseScreenState extends State<PythonCourseScreen> {
                         ),
                         IconButton(
                           icon: isFavorite
-                              ? Icon(
+                              ? const Icon(
                                   Icons.favorite,
                                   color: Colors.white,
                                 )
-                              : Icon(
+                              : const Icon(
                                   Icons.favorite_border,
                                   color: Colors.white,
                                 ),
@@ -89,7 +86,7 @@ class _PythonCourseScreenState extends State<PythonCourseScreen> {
                             Container(
                               width: 70,
                               height: 70,
-                              decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(14)),
                                 image: DecorationImage(
@@ -102,7 +99,7 @@ class _PythonCourseScreenState extends State<PythonCourseScreen> {
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
+                                const Text(
                                   'Python',
                                   style: TextStyle(
                                       color: Colors.white,
@@ -110,7 +107,7 @@ class _PythonCourseScreenState extends State<PythonCourseScreen> {
                                       fontWeight: FontWeight.bold),
                                 ),
                                 Row(
-                                  children: [
+                                  children: const [
                                     Icon(Icons.star, color: Colors.white),
                                     Text(
                                       '4.5',
@@ -123,7 +120,7 @@ class _PythonCourseScreenState extends State<PythonCourseScreen> {
                             ),
                           ],
                         ),
-                        Text(
+                        const Text(
                           'Бесплатно',
                           style: TextStyle(
                               color: Colors.white,
@@ -141,7 +138,7 @@ class _PythonCourseScreenState extends State<PythonCourseScreen> {
               child: Container(
                 decoration: BoxDecoration(
                     color: Theme.of(context).scaffoldBackgroundColor,
-                    borderRadius: BorderRadius.only(
+                    borderRadius: const BorderRadius.only(
                         topLeft: Radius.circular(38),
                         topRight: Radius.circular(38))),
                 width: double.infinity,
@@ -167,7 +164,7 @@ class _PythonCourseScreenState extends State<PythonCourseScreen> {
                           Container(
                             width: 10,
                             height: 10,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(5)),
                                 color: Colors.black),

@@ -21,9 +21,9 @@ class CourseTopicSectionWidget extends StatelessWidget {
             children: [
               Text(
                 '${data.id}',
-                style: TextStyle(fontSize: 68),
+                style: const TextStyle(fontSize: 68),
               ),
-              SizedBox(width: 15),
+              const SizedBox(width: 15),
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -32,11 +32,11 @@ class CourseTopicSectionWidget extends StatelessWidget {
                     data.topicName,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                    style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
                   ),
                   Text(
                     data.duration,
-                    style: TextStyle(fontSize: 18, color: Colors.grey),
+                    style: const TextStyle(fontSize: 18, color: Colors.grey),
                   ),
                 ],
               )

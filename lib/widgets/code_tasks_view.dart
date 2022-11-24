@@ -10,7 +10,7 @@ class CodeTaskWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(16)),
         gradient: LinearGradient(
           colors: [
@@ -21,7 +21,7 @@ class CodeTaskWidget extends StatelessWidget {
         )
       ),
       child: Padding(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -30,22 +30,22 @@ class CodeTaskWidget extends StatelessWidget {
               children: [
                 Text(
                   codeTask.name,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 26,
                     fontWeight: FontWeight.bold
                   ),
                 ),
                 Text(
                   codeTask.difficulty,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w400
                   ),
                 ),
               ],
             ),
-            codeTask.isSolved? Icon(Icons.circle_outlined):
-            Icon(Icons.task_alt),
+            codeTask.isSolved? const Icon(Icons.circle_outlined):
+            const Icon(Icons.task_alt),
           ],
         ),
       )

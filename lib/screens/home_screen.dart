@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:qadam/const/code_task.dart';
 import 'package:qadam/widgets/code_tasks_view.dart';
 import '../const/programming_language.dart';
-import '../const/learning_section_class.dart';
 import '../widgets/learning_section_widget.dart';
-import '../widgets/rounded_news.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
@@ -30,8 +28,8 @@ class HomeScreen extends StatelessWidget {
         7,
         'Easy',
         35,
-        Color(0xff6cc6cb),
-        Color(0xffeae5c9), [
+        const Color(0xff6cc6cb),
+        const Color(0xffeae5c9), [
       ProgrammingLanguageCourse(1, 'Введение', '30 min', false),
       ProgrammingLanguageCourse(2, 'Ввод и вывод данных', '60 min', false),
       ProgrammingLanguageCourse(3, 'Условный оператор', '60 min', false),
@@ -44,8 +42,8 @@ class HomeScreen extends StatelessWidget {
         9,
         'Easy',
         10,
-        Color(0xff7dc387),
-        Color(0xffdbe9ea), [
+        const Color(0xff7dc387),
+        const Color(0xffdbe9ea), [
       ProgrammingLanguageCourse(1, 'Введение', '30 min', false),
       ProgrammingLanguageCourse(2, 'Ввод и вывод данных', '60 min', false),
       ProgrammingLanguageCourse(3, 'Условный оператор', '60 min', false),
@@ -58,8 +56,8 @@ class HomeScreen extends StatelessWidget {
         15,
         'Easy',
         100,
-        Color(0xffa18cd1),
-        Color(0xfffbc2eb), [
+        const Color(0xffa18cd1),
+        const Color(0xfffbc2eb), [
       ProgrammingLanguageCourse(1, 'Введение', '30 min', false),
       ProgrammingLanguageCourse(2, 'Ввод и вывод данных', '60 min', false),
       ProgrammingLanguageCourse(3, 'Условный оператор', '60 min', false),
@@ -69,10 +67,10 @@ class HomeScreen extends StatelessWidget {
   ];
 
   final List<CodeTask> codeTasks = [
-    CodeTask('a+b', 'Easy', true),
-    CodeTask('Fibonacci', 'Hard', false),
-    CodeTask('Revers', 'Hard', true),
-    CodeTask('days', 'Easy', true),
+    CodeTask('a+b', 'Легко', true),
+    CodeTask('Фиббоначи', 'Тяжело', false),
+    CodeTask('Реверс', 'Тяжело', true),
+    CodeTask('Дни', 'Легко', true),
   ];
 
   @override
@@ -81,7 +79,7 @@ class HomeScreen extends StatelessWidget {
       padding: const EdgeInsets.only(right: 16, left: 16, top: 10),
       child: ListView(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
           Column(
@@ -89,24 +87,24 @@ class HomeScreen extends StatelessWidget {
             children: <Widget>[
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[Icon(Icons.menu), Icon(Icons.person)],
+                children: <Widget>[const Icon(Icons.menu), const Icon(Icons.person)],
               ),
-              SizedBox(height: 30),
-              Text(
-                "Hey Alex,",style: TextStyle(fontSize: 36),
+              const SizedBox(height: 30),
+              const Text(
+                "Добрый день",style: TextStyle(fontSize: 36),
               ),
 
-              Text(
-                "Find a course you want to learn",
+              const Text(
+                "Найдите курс который хотите изучать",
                 style: TextStyle(fontSize: 20),
               ),
               Container(
-                margin: EdgeInsets.symmetric(vertical: 30),
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+                margin: const EdgeInsets.symmetric(vertical: 30),
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
                 height: 60,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  color: Color(0xFFF5F5F7),
+                  color: const Color(0xFFF5F5F7),
                   borderRadius: BorderRadius.circular(40),
                 ),
                 child: Row(
@@ -115,9 +113,9 @@ class HomeScreen extends StatelessWidget {
                       Icons.search,
                       color: Theme.of(context).scaffoldBackgroundColor,
                     ),
-                    SizedBox(width: 16),
-                    Text(
-                      "Search for anything",
+                    const SizedBox(width: 16),
+                    const Text(
+                      "Поиск",
                       style: TextStyle(
                         fontSize: 18,
                         color: Color(0xFFA0A5BD),
@@ -130,7 +128,7 @@ class HomeScreen extends StatelessWidget {
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
+            children: const  [
               Text(
                 'Курсы',
                 style: TextStyle(fontSize: 24),
@@ -160,7 +158,7 @@ class HomeScreen extends StatelessWidget {
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
+            children: const [
               Text(
                 'Задачи',
                 style: TextStyle(fontSize: 24),
@@ -170,7 +168,7 @@ class HomeScreen extends StatelessWidget {
               )
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Expanded(

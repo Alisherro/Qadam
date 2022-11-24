@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_signin_button/button_list.dart';
-import 'package:flutter_signin_button/button_view.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../widgets/sign_up_button.dart';
-import 'main_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -161,17 +158,17 @@ class _LoginScreenState extends State<LoginScreen> {
                       Container(
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            const SignUpButton(
+                          children: const [
+                            SignUpButton(
                               icon: FontAwesomeIcons.google,
                             ),
-                            const SignUpButton(
+                            SignUpButton(
                               icon: FontAwesomeIcons.facebook,
                             ),
-                            const SignUpButton(
+                            SignUpButton(
                               icon: FontAwesomeIcons.github,
                             ),
-                            const SignUpButton(
+                            SignUpButton(
                               icon: FontAwesomeIcons.linkedin,
                             ),
                           ],

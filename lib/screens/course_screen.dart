@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../const/programming_language.dart';
-import '../widgets/bottom_nav_bar.dart';
 import '../widgets/course_progress_indicator.dart';
 
 class CourseScreen extends StatelessWidget {
@@ -28,8 +27,8 @@ class CourseScreen extends StatelessWidget {
         7,
         'Easy',
         35,
-        Color(0xff6cc6cb),
-        Color(0xffeae5c9), [
+        const Color(0xff6cc6cb),
+        const Color(0xffeae5c9), [
       ProgrammingLanguageCourse(1, 'Введение', '30 min', false),
       ProgrammingLanguageCourse(2, 'Ввод и вывод данных', '60 min', false),
       ProgrammingLanguageCourse(3, 'Условный оператор', '60 min', false),
@@ -42,8 +41,8 @@ class CourseScreen extends StatelessWidget {
         9,
         'Easy',
         10,
-        Color(0xff7dc387),
-        Color(0xffdbe9ea), [
+        const Color(0xff7dc387),
+        const Color(0xffdbe9ea), [
       ProgrammingLanguageCourse(1, 'Введение', '30 min', false),
       ProgrammingLanguageCourse(2, 'Ввод и вывод данных', '60 min', false),
       ProgrammingLanguageCourse(3, 'Условный оператор', '60 min', false),
@@ -56,8 +55,8 @@ class CourseScreen extends StatelessWidget {
         15,
         'Easy',
         100,
-        Color(0xffa18cd1),
-        Color(0xfffbc2eb), [
+        const Color(0xffa18cd1),
+        const Color(0xfffbc2eb), [
       ProgrammingLanguageCourse(1, 'Введение', '30 min', false),
       ProgrammingLanguageCourse(2, 'Ввод и вывод данных', '60 min', false),
       ProgrammingLanguageCourse(3, 'Условный оператор', '60 min', false),
