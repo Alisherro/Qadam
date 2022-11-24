@@ -1,4 +1,3 @@
-
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
@@ -14,7 +13,7 @@ class CodeEditorScreen extends StatefulWidget {
 }
 
 class _CodeEditorScreenState extends State<CodeEditorScreen> {
-  var loadingPercentage = 0;
+  WebView? web;
   final Completer<WebViewController> _controller =
       Completer<WebViewController>();
   @override
@@ -32,27 +31,9 @@ class _CodeEditorScreenState extends State<CodeEditorScreen> {
                   () => VerticalDragGestureRecognizer())),
             zoomEnabled: false,
             initialUrl: 'https://trinket.io/embed/python3/f03e855da4',
-            onPageStarted: (url) {
-              setState(() {
-                loadingPercentage = 0;
-              });
-            },
-            onProgress: (progress) {
-              setState(() {
-                loadingPercentage = progress;
-              });
-            },
-            onPageFinished: (url) {
-              setState(() {
-                loadingPercentage = 100;
-              });
-            },
+            
           ),
         ),
-        if (loadingPercentage < 100)
-          LinearProgressIndicator(
-            value: loadingPercentage / 100.0,
-          ),
       ],
     );
   }

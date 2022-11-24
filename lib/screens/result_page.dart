@@ -55,7 +55,6 @@ class _ResultPageState extends State<ResultPage> {
                 ],
               ),
               ElevatedButton(
-                
                 onPressed: () {
                   Navigator.pop(context);
                 },
