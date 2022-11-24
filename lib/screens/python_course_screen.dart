@@ -16,22 +16,12 @@ class PythonCourseScreen extends StatefulWidget {
 class _PythonCourseScreenState extends State<PythonCourseScreen> {
   bool isFavorite = false;
 
-  final List<PythonCourse> _courseList=[
-    PythonCourse(
-      1, 'Введение', '30 min', true
-    ),
-    PythonCourse(
-      2, 'Ввод и вывод данных', '60 min', true
-    ),
-    PythonCourse(
-        3, 'Условный оператор', '60 min', false
-    ),
-    PythonCourse(
-        4, 'Строки', '60 min', false
-    ),
-    PythonCourse(
-        5, 'Циклы', '45 min', false
-    ),
+  final List<PythonCourse> _courseList = [
+    PythonCourse(1, 'Введение', '30 min', true),
+    PythonCourse(2, 'Ввод и вывод данных', '60 min', true),
+    PythonCourse(3, 'Условный оператор', '60 min', false),
+    PythonCourse(4, 'Строки', '60 min', false),
+    PythonCourse(5, 'Циклы', '45 min', false),
   ];
 
   @override
@@ -104,8 +94,7 @@ class _PythonCourseScreenState extends State<PythonCourseScreen> {
                                     BorderRadius.all(Radius.circular(14)),
                                 image: DecorationImage(
                                   fit: BoxFit.cover,
-                                  image: NetworkImage(
-                                      'https://www.kindpng.com/picc/m/159-1595772_transparent-python-logo-hd-png-download.png'),
+                                  image:  AssetImage('assets/images/qadam.jpg'),
                                 ),
                               ),
                             ),
@@ -135,7 +124,7 @@ class _PythonCourseScreenState extends State<PythonCourseScreen> {
                           ],
                         ),
                         Text(
-                          'Free',
+                          'бесплатно',
                           style: TextStyle(color: Colors.white, fontSize: 18),
                         ),
                       ],

@@ -5,45 +5,65 @@ import '../widgets/bottom_nav_bar.dart';
 import '../widgets/course_progress_indicator.dart';
 
 class CourseScreen extends StatelessWidget {
-  CourseScreen({Key? key}) : super(key: key);
 
+  CourseScreen({Key? key}) : super(key: key);
   final List<ProgrammingLanguage> languages = [
     ProgrammingLanguage(
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/800px-ISO_C%2B%2B_Logo.svg.png',
-      'C++',
-      10,
-      'Easy',
-      65,
-      Colors.indigo,
-      Colors.cyan,
-    ),
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/800px-ISO_C%2B%2B_Logo.svg.png',
+        'Python',
+        14,
+        'Easy',
+        65,
+        Colors.indigo,
+        Colors.cyan, [
+      ProgrammingLanguageCourse(1, 'Введение', '30 min', true),
+      ProgrammingLanguageCourse(2, 'Ввод и вывод данных', '60 min', true),
+      ProgrammingLanguageCourse(3, 'Условный оператор', '60 min', false),
+      ProgrammingLanguageCourse(4, 'Строки', '60 min', false),
+      ProgrammingLanguageCourse(5, 'Циклы', '45 min', false),
+    ]),
     ProgrammingLanguage(
-      'https://s0.rbk.ru/v6_top_pics/media/img/1/60/756533742439601.jpg',
-      'Java',
-      10,
-      'Easy',
-      35,
-      Color(0xff6cc6cb),
-      Color(0xffeae5c9),
-    ),
+        'https://s0.rbk.ru/v6_top_pics/media/img/1/60/756533742439601.jpg',
+        'Java',
+        7,
+        'Easy',
+        35,
+        Color(0xff6cc6cb),
+        Color(0xffeae5c9), [
+      ProgrammingLanguageCourse(1, 'Введение', '30 min', false),
+      ProgrammingLanguageCourse(2, 'Ввод и вывод данных', '60 min', false),
+      ProgrammingLanguageCourse(3, 'Условный оператор', '60 min', false),
+      ProgrammingLanguageCourse(4, 'Строки', '60 min', false),
+      ProgrammingLanguageCourse(5, 'Циклы', '45 min', false),
+    ]),
     ProgrammingLanguage(
-      'https://www.pngitem.com/pimgs/m/480-4800518_file-dart-logo-dart-programming-language-logo-hd.png',
-      'Dart',
-      10,
-      'Easy',
-      10,
-      Color(0xff7dc387),
-      Color(0xffdbe9ea),
-    ),
+        'https://www.pngitem.com/pimgs/m/480-4800518_file-dart-logo-dart-programming-language-logo-hd.png',
+        'Dart',
+        9,
+        'Easy',
+        10,
+        Color(0xff7dc387),
+        Color(0xffdbe9ea), [
+      ProgrammingLanguageCourse(1, 'Введение', '30 min', false),
+      ProgrammingLanguageCourse(2, 'Ввод и вывод данных', '60 min', false),
+      ProgrammingLanguageCourse(3, 'Условный оператор', '60 min', false),
+      ProgrammingLanguageCourse(4, 'Строки', '60 min', false),
+      ProgrammingLanguageCourse(5, 'Циклы', '45 min', false),
+    ]),
     ProgrammingLanguage(
-      'https://www.freecodecamp.org/news/content/images/2021/10/golang.png',
-      'Go',
-      10,
-      'Easy',
-      100,
-      Color(0xff7dc387),
-      Color(0xffdbe9ea),
-    ),
+        'https://www.freecodecamp.org/news/content/images/2021/10/golang.png',
+        'Go',
+        15,
+        'Easy',
+        100,
+        Color(0xffa18cd1),
+        Color(0xfffbc2eb), [
+      ProgrammingLanguageCourse(1, 'Введение', '30 min', false),
+      ProgrammingLanguageCourse(2, 'Ввод и вывод данных', '60 min', false),
+      ProgrammingLanguageCourse(3, 'Условный оператор', '60 min', false),
+      ProgrammingLanguageCourse(4, 'Строки', '60 min', false),
+      ProgrammingLanguageCourse(5, 'Циклы', '45 min', false),
+    ]),
   ];
 
   @override
