@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:qadam/screens/main_screen.dart';
 
 import '../const/python_course.dart';
+import '../widgets/bottom_nav_bar.dart';
 import '../widgets/course_topc_section_widget.dart';
 
 class PythonCourseScreen extends StatefulWidget {
@@ -16,16 +18,17 @@ class _PythonCourseScreenState extends State<PythonCourseScreen> {
   final List<PythonCourse> _courseList = [
     PythonCourse(1, 'Введение', '30 min', true),
     PythonCourse(2, 'Ввод и вывод данных', '60 min', true),
-    PythonCourse(3, 'Условный оператор', '60 min', false),
-    PythonCourse(4, 'Строки', '60 min', false),
-    PythonCourse(5, 'Циклы', '45 min', false),
+    PythonCourse(3, 'Типы данных', '60 min', true),
+    PythonCourse(4, 'Условный оператор', '60 min', false),
+    PythonCourse(5, 'Строки', '60 min', false),
+    PythonCourse(6, 'Циклы', '45 min', false),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
             gradient: LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.centerRight,
@@ -58,11 +61,11 @@ class _PythonCourseScreenState extends State<PythonCourseScreen> {
                         ),
                         IconButton(
                           icon: isFavorite
-                              ? const Icon(
+                              ? Icon(
                                   Icons.favorite,
                                   color: Colors.white,
                                 )
-                              : const Icon(
+                              : Icon(
                                   Icons.favorite_border,
                                   color: Colors.white,
                                 ),
@@ -86,7 +89,7 @@ class _PythonCourseScreenState extends State<PythonCourseScreen> {
                             Container(
                               width: 70,
                               height: 70,
-                              decoration: const BoxDecoration(
+                              decoration: BoxDecoration(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(14)),
                                 image: DecorationImage(
@@ -99,7 +102,7 @@ class _PythonCourseScreenState extends State<PythonCourseScreen> {
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                const Text(
+                                Text(
                                   'Python',
                                   style: TextStyle(
                                       color: Colors.white,
@@ -107,7 +110,7 @@ class _PythonCourseScreenState extends State<PythonCourseScreen> {
                                       fontWeight: FontWeight.bold),
                                 ),
                                 Row(
-                                  children: const [
+                                  children: [
                                     Icon(Icons.star, color: Colors.white),
                                     Text(
                                       '4.5',
@@ -120,7 +123,7 @@ class _PythonCourseScreenState extends State<PythonCourseScreen> {
                             ),
                           ],
                         ),
-                        const Text(
+                        Text(
                           'Бесплатно',
                           style: TextStyle(
                               color: Colors.white,
@@ -138,7 +141,7 @@ class _PythonCourseScreenState extends State<PythonCourseScreen> {
               child: Container(
                 decoration: BoxDecoration(
                     color: Theme.of(context).scaffoldBackgroundColor,
-                    borderRadius: const BorderRadius.only(
+                    borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(38),
                         topRight: Radius.circular(38))),
                 width: double.infinity,
@@ -164,7 +167,7 @@ class _PythonCourseScreenState extends State<PythonCourseScreen> {
                           Container(
                             width: 10,
                             height: 10,
-                            decoration: const BoxDecoration(
+                            decoration: BoxDecoration(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(5)),
                                 color: Colors.black),
