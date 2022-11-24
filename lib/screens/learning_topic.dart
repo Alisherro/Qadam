@@ -100,7 +100,6 @@ class _PythonTopic1State extends State<PythonTopic1> {
                       child: Container(
                           width: double.infinity,
                           decoration: const BoxDecoration(
-                              color: Colors.white,
                               borderRadius: BorderRadius.only(
                                   topLeft: Radius.circular(30),
                                   topRight: Radius.circular(30))),
