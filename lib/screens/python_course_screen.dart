@@ -17,8 +17,8 @@ class _PythonCourseScreenState extends State<PythonCourseScreen> {
 
   final List<PythonCourse> _courseList = [
     PythonCourse(1, 'Введение', '30 min', true),
-    PythonCourse(2, 'Ввод и вывод данных', '60 min', true),
-    PythonCourse(3, 'Типы данных', '60 min', true),
+    PythonCourse(2, 'Типы данных', '60 min', true),
+    PythonCourse(3, 'Ввод и вывод данных', '60 min', true),
     PythonCourse(4, 'Условный оператор', '60 min', false),
     PythonCourse(5, 'Строки', '60 min', false),
     PythonCourse(6, 'Циклы', '45 min', false),

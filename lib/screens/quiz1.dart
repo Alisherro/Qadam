@@ -23,40 +23,35 @@ class Option {
 }
 
 final questions = [
-  Question(text: 'Команда print() используется для ', options: [
-    Option(isCorrect: true, text: 'Вывода данных на экран'),
-    Option(isCorrect: false, text: 'Считывания данных с клавиатуры'),
-    Option(isCorrect: false, text: 'Для работы с циклом'),
-    Option(isCorrect: false, text: 'Импортируем библиотеку'),
+  Question(text: 'Python был создан  ', options: [
+    Option(isCorrect: false, text: 'к концу 1976 году'),
+    Option(isCorrect: true, text: 'к 1991 году'),
+    Option(isCorrect: false, text: 'в начале 19 века'),
+    Option(isCorrect: false, text: 'в 2001 году'),
   ]),
-  Question(text: 'Команда input() используется для ', options: [
-    Option(isCorrect: false, text: 'Вывода данных на экран'),
-    Option(isCorrect: false, text: 'Импортируем библиотеку'),
-    Option(isCorrect: true, text: 'Считывания данных с клавиатуры'),
-    Option(isCorrect: false, text: 'Для работы с циклом'),
+  Question(text: 'Python характеризуется.. ', options: [
+    Option(isCorrect: false, text: 'ясным синтаксисом'),
+    Option(isCorrect: false, text: 'красивыми звездами'),
+    Option(isCorrect: true, text: 'змеей'),
+    Option(isCorrect: false, text: 'зеленым '),
   ]),
   Question(
-      text: 'Что выведет следующая программа?\nprint("Hello world!")',
+      text: 'Свое имя - Python - получил от названия..',
       options: [
-        Option(isCorrect: true, text: 'Hello world!'),
-        Option(isCorrect: false, text: '"Hello world!"'),
-        Option(isCorrect: false, text: 'World Hello!'),
+        Option(isCorrect: false, text: 'оружия'),
+        Option(isCorrect: false, text: 'пресмыкающегося'),
+        Option(isCorrect: true, text: 'телесериала'),
       ]),
-  Question(text: 'Команда print() используется для ', options: [
-    Option(isCorrect: true, text: 'Вывода данных на экран'),
-    Option(isCorrect: false, text: 'Считывания данных с клавиатуры'),
-    Option(isCorrect: false, text: 'Для работы с циклом'),
-  ]),
 ];
 
-class Quiz extends StatefulWidget {
-  const Quiz({super.key});
+class Quiz1 extends StatefulWidget {
+  const Quiz1({super.key});
 
   @override
-  State<Quiz> createState() => _QuizState();
+  State<Quiz1> createState() => _Quiz1State();
 }
 
-class _QuizState extends State<Quiz> {
+class _Quiz1State extends State<Quiz1> {
   late PageController controller;
   int questionNumber = 1;
   int score = 0;
@@ -72,50 +67,59 @@ class _QuizState extends State<Quiz> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      backgroundColor: const Color(0xff6cc6cb),
-      body: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Expanded(
-              flex: 1,
-              child: Center(
-                child: Text(
-                  '$questionNumber/${questions.length}',
-                  style: const TextStyle(fontSize: 40),
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.centerRight,
+            colors: [
+              Colors.indigo,
+              Colors.cyan,
+            ],),),
+        child: SafeArea(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Expanded(
+                flex: 1,
+                child: Center(
+                  child: Text(
+                    '$questionNumber/${questions.length}',
+                    style: const TextStyle(fontSize: 40),
+                  ),
                 ),
               ),
-            ),
-            Expanded(
-                flex: 6,
-                child: Container(
-                  width: double.infinity,
-                  decoration: const BoxDecoration(
-                      color: Color(0xff282c35),
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(30),
-                          topRight: Radius.circular(30))),
+              Expanded(
+                  flex: 6,
                   child: Container(
-                    margin: const EdgeInsets.all(20.0),
-                    child: PageView.builder(
-                      controller: controller,
-                      itemCount: questions.length,
-                      itemBuilder: ((context, index) {
-                        final question = questions[index];
-                        return buildQuestions(question);
-                      }),
-                      physics: const NeverScrollableScrollPhysics(),
+                    width: double.infinity,
+                    decoration: const BoxDecoration(
+                        color: Color(0xff282c35),
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(30),
+                            topRight: Radius.circular(30))),
+                    child: Container(
+                      margin: const EdgeInsets.all(20.0),
+                      child: PageView.builder(
+                        controller: controller,
+                        itemCount: questions.length,
+                        itemBuilder: ((context, index) {
+                          final question = questions[index];
+                          return buildQuestions(question);
+                        }),
+                        physics: const NeverScrollableScrollPhysics(),
+                      ),
                     ),
-                  ),
-                )),
-          ],
+                  )),
+            ],
+          ),
         ),
       ),
     );
   }
 
   Column buildQuestions(Question question) {
-    
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [

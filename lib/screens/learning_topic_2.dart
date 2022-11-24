@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:qadam/screens/quiz.dart';
+import 'package:qadam/screens/quiz1.dart';
+import 'package:qadam/screens/quiz2.dart';
 
 class UnbordingContent {
   String discription;
@@ -146,7 +147,7 @@ class _PythonTopic2State extends State<PythonTopic2> {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        Quiz()));
+                                                        Quiz2()));
                                           }
                                           _controller!.nextPage(
                                             duration:
