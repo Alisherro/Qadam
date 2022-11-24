@@ -43,124 +43,133 @@ class _PythonTopic2State extends State<PythonTopic2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xff6cc6cb),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Expanded(
-            flex: 2,
-            child: Padding(
-              padding:
-              const EdgeInsets.symmetric(vertical: 36.0, horizontal: 20),
-              child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
-                    Text('Python',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 46,
-                            fontWeight: FontWeight.bold)),
-                    Text('Типы данных',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 23,
-                            fontWeight: FontWeight.bold)),
-                  ]),
-            ),
-          ),
-          Container(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: List.generate(
-                contents.length,
-                    (index) => buildDot(index, context),
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.centerRight,
+            colors: [
+              Colors.indigo,
+              Colors.cyan,
+            ],),),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Expanded(
+              flex: 2,
+              child: Padding(
+                padding:
+                const EdgeInsets.symmetric(vertical: 36.0, horizontal: 20),
+                child: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: const [
+                      Text('Python',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 46,
+                              fontWeight: FontWeight.bold)),
+                      Text('Типы данных',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 23,
+                              fontWeight: FontWeight.bold)),
+                    ]),
               ),
             ),
-          ),
-          const SizedBox(
-            height: 30,
-          ),
-          Expanded(
-            flex: 5,
-            child: PageView.builder(
-              itemBuilder: (_, i) {
-                return Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    //Title of the topic and programming language
+            Container(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: List.generate(
+                  contents.length,
+                      (index) => buildDot(index, context),
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            Expanded(
+              flex: 5,
+              child: PageView.builder(
+                itemBuilder: (_, i) {
+                  return Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      //Title of the topic and programming language
 
-                    Expanded(
-                      child: Container(
-                        width: double.infinity,
-                        decoration: const BoxDecoration(
-                            color: Color(0xff282c35),
-                            borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(30),
-                                topRight: Radius.circular(30))),
-                        child: Expanded(
-                          flex: 5,
-                          child: PageView.builder(
-                            controller: _controller,
-                            itemCount: contents.length,
-                            onPageChanged: (int index) {
-                              setState(() {
-                                currentIndex = index;
-                              });
-                            },
-                            itemBuilder: (_, i) {
-                              return Column(
-                                mainAxisAlignment:
-                                MainAxisAlignment.spaceBetween,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  const SizedBox(
-                                    height: 45,
-                                  ),
-                                  Expanded(
-                                      child:
-                                      Image.asset(contents[i].discription)),
-                                  Container(
-                                    height: 60,
-                                    margin: const EdgeInsets.all(40),
-                                    width: double.infinity,
-                                    child: FloatingActionButton(
-                                      child: Icon(currentIndex ==
-                                          contents.length - 1
-                                          ? Icons.question_mark_rounded
-                                          : Icons.arrow_forward_ios_rounded),
-                                      onPressed: () {
-                                        if (currentIndex ==
-                                            contents.length - 1) {
-                                          Navigator.pushReplacement(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      Quiz()));
-                                        }
-                                        _controller!.nextPage(
-                                          duration:
-                                          const Duration(milliseconds: 100),
-                                          curve: Curves.bounceIn,
-                                        );
-                                      },
+                      Expanded(
+                        child: Container(
+                          width: double.infinity,
+                          decoration: const BoxDecoration(
+                              color: Color(0xff282c35),
+                              borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(30),
+                                  topRight: Radius.circular(30))),
+                          child: Expanded(
+                            flex: 5,
+                            child: PageView.builder(
+                              controller: _controller,
+                              itemCount: contents.length,
+                              onPageChanged: (int index) {
+                                setState(() {
+                                  currentIndex = index;
+                                });
+                              },
+                              itemBuilder: (_, i) {
+                                return Column(
+                                  mainAxisAlignment:
+                                  MainAxisAlignment.spaceBetween,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    const SizedBox(
+                                      height: 45,
                                     ),
-                                  )
-                                ],
-                              );
-                            },
+                                    Expanded(
+                                        child:
+                                        Image.asset(contents[i].discription)),
+                                    Container(
+                                      height: 60,
+                                      margin: const EdgeInsets.all(40),
+                                      width: double.infinity,
+                                      child: FloatingActionButton(
+                                        child: Icon(currentIndex ==
+                                            contents.length - 1
+                                            ? Icons.question_mark_rounded
+                                            : Icons.arrow_forward_ios_rounded),
+                                        onPressed: () {
+                                          if (currentIndex ==
+                                              contents.length - 1) {
+                                            Navigator.pushReplacement(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        Quiz()));
+                                          }
+                                          _controller!.nextPage(
+                                            duration:
+                                            const Duration(milliseconds: 100),
+                                            curve: Curves.bounceIn,
+                                          );
+                                        },
+                                      ),
+                                    )
+                                  ],
+                                );
+                              },
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                  ],
-                );
-              },
+                    ],
+                  );
+                },
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
