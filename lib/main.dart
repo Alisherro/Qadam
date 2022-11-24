@@ -6,6 +6,7 @@ import 'package:qadam/screens/login_screen.dart';
 import 'package:qadam/screens/main_screen.dart';
 import 'package:qadam/screens/python_course_screen.dart';
 import 'package:qadam/screens/quiz.dart';
+import 'package:qadam/screens/result_page.dart';
 import 'const/tab_manager.dart';
 
 void main() {
@@ -34,11 +35,11 @@ class _MyAppState extends State<MyApp> {
       child: MaterialApp(
         initialRoute: '/',
         routes: {
-          '/': (context) => const LoginScreen(),
+          '/': (context) =>  const LoginScreen(),
           '/main': (context) =>  MainScreen(),
-          '/python':(context) =>  PythonCourseScreen(),
-          '/python/1':(context) =>  PythonTopic1(),
-          '/python/1/quiz':(context) =>  Quiz(),
+          '/python':(context) =>  const PythonCourseScreen(),
+          '/python/1':(context) =>  const PythonTopic1(),
+          '/python/1/quiz':(context) =>  const Quiz(),
         },
         debugShowCheckedModeBanner: false,
         theme: _darkTheme,

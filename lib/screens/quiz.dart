@@ -166,7 +166,7 @@ class _QuizState extends State<Quiz> {
             Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                    builder: ((context) => ResultPage(score: score))));
+                    builder: ((context) => ResultPage(score: score, number: questions.length))));
           }
         },
         child: Text(questionNumber < questions.length
