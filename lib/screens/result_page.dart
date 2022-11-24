@@ -2,15 +2,32 @@ import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
 // ignore: must_be_immutable
-class ResultPage extends StatelessWidget {
+class ResultPage extends StatefulWidget {
   ResultPage({super.key, required this.score, required this.number});
   int number;
   int score;
-  late double result = score / number;
+
+  @override
+  State<ResultPage> createState() => _ResultPageState();
+}
+
+class _ResultPageState extends State<ResultPage> {
+  late double result = widget.score / widget.number;
+
+  bool text = true;
+  @override
+  void setState(VoidCallback fn) {
+    if (result < 0.5) {
+      text = false;
+    }
+    super.setState(fn);
+  }
+
   @override
   Widget build(BuildContext context) {
+    String cong = 'Поздравляю!';
+    String los = 'Неплохо, но попробуй еще раз!';
     return Scaffold(
-<<<<<<< HEAD
       body: Center(
         child: Container(
           margin: const EdgeInsets.symmetric(horizontal: 15.0),
@@ -50,22 +67,8 @@ class ResultPage extends StatelessWidget {
                 child: const Text('Продолжить'),
               )
             ],
-=======
-      body: Column(
-        children: [
-          Expanded(
-            child: CircularPercentIndicator(
-              radius: 100,
-              center: Text('${(result * 100).toInt()}%', style: const TextStyle(fontSize: 20),),
-              lineWidth: 30,
-              percent: result,
-              circularStrokeCap: CircularStrokeCap.round,
-              progressColor: scoreColor(result),
-            ),
->>>>>>> 1064a8454bb0657803013b7350fb61351bb6cf88
           ),
-          SizedBox(height: 30)
-        ],
+        ),
       ),
     );
   }
