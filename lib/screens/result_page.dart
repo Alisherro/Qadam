@@ -10,20 +10,22 @@ class ResultPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Expanded(
-            child: CircularPercentIndicator(
-              radius: 100,
-              center: Text('${(result * 100).toInt()}%', style: const TextStyle(fontSize: 20),),
-              lineWidth: 30,
-              percent: result,
-              circularStrokeCap: CircularStrokeCap.round,
-              progressColor: scoreColor(result),
+      body: Center(
+        child: Column(
+          children: [
+            Expanded(
+              child: CircularPercentIndicator(
+                radius: 100,
+                center: Text('${(result * 100).toInt()}%', style: const TextStyle(fontSize: 20),),
+                lineWidth: 30,
+                percent: result,
+                circularStrokeCap: CircularStrokeCap.round,
+                progressColor: scoreColor(result),
+              ),
             ),
-          ),
-          SizedBox(height: 30)
-        ],
+            SizedBox(height: 30)
+          ],
+        ),
       ),
     );
   }

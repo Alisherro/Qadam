@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:qadam/const/qadam_theme.dart';
-import 'package:qadam/screens/learning_topic.dart';
+import 'package:qadam/screens/learning_topic_1.dart';
+import 'package:qadam/screens/learning_topic_2.dart';
+import 'package:qadam/screens/learning_topic_3.dart';
 import 'package:qadam/screens/login_screen.dart';
 import 'package:qadam/screens/main_screen.dart';
 import 'package:qadam/screens/python_course_screen.dart';
@@ -39,6 +41,8 @@ class _MyAppState extends State<MyApp> {
           '/main': (context) =>  MainScreen(),
           '/python':(context) =>  const PythonCourseScreen(),
           '/python/1':(context) =>  const PythonTopic1(),
+          '/python/2':(context) =>  const PythonTopic2(),
+          '/python/3':(context) =>  const PythonTopic3(),
           '/python/1/quiz':(context) =>  const Quiz(),
         },
         debugShowCheckedModeBanner: false,
