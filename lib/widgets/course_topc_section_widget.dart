@@ -11,7 +11,7 @@ class CourseTopicSectionWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.pushNamed(context, data.isOpen?'/python/${data.id}':'');
+        Navigator.pushNamed(context, data.isOpen ? '/python/${data.id}' : '');
       },
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -30,8 +30,9 @@ class CourseTopicSectionWidget extends StatelessWidget {
                 children: [
                   Text(
                     data.topicName,
-                    style:
-                        TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
                   ),
                   Text(
                     data.duration,
@@ -42,7 +43,10 @@ class CourseTopicSectionWidget extends StatelessWidget {
             ],
           ),
           Center(
-            child: Icon(data.isOpen ? Icons.play_arrow : Icons.lock_outline, size: 28,),
+            child: Icon(
+              data.isOpen ? Icons.play_arrow : Icons.lock_outline,
+              size: 28,
+            ),
           )
         ],
       ),

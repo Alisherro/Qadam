@@ -135,13 +135,7 @@ class _PythonTopic1State extends State<PythonTopic1> {
                                             onPressed: () {
                                               if (currentIndex ==
                                                   contents.length - 1) {
-                                                Navigator.pushReplacement(
-                                                  context,
-                                                  MaterialPageRoute(
-                                                    builder: (_) =>
-                                                        const Quiz(),
-                                                  ),
-                                                );
+                                                Navigator.pushNamed(context, '/python/1/quiz');
                                               }
                                               _controller!.nextPage(
                                                 duration: const Duration(

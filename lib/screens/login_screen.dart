@@ -117,8 +117,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         padding: const EdgeInsets.symmetric(horizontal: 25),
                         child: InkWell(
                           onTap: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => MainScreen()));
+                            Navigator.pushNamed(context, '/main');
                           },
                           child: Container(
                             width: double.infinity,
