@@ -81,7 +81,7 @@ class QadamTheme {
 
   static ThemeData light() {
     return ThemeData(
-      scaffoldBackgroundColor: Color(0xffeeeeee),
+      scaffoldBackgroundColor: const Color(0xffeeeeee),
       backgroundColor: Colors.black12,
       fontFamily: 'Raleway',
       brightness: Brightness.light,
@@ -107,7 +107,7 @@ class QadamTheme {
 
   static ThemeData dark() {
     return ThemeData(
-      scaffoldBackgroundColor: Color(0xff282c35),
+      scaffoldBackgroundColor: const Color(0xff282c35),
       backgroundColor: Colors.black26,
       fontFamily: 'Raleway',
       brightness: Brightness.dark,

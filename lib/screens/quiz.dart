@@ -22,8 +22,6 @@ class Option {
   Option({required this.isCorrect, required this.text});
 }
 
-const String print = 'print()';
-
 final questions = [
   Question(text: 'Команда print() используется для ', options: [
     Option(isCorrect: true, text: 'Вывода данных на экран'),
@@ -72,6 +70,7 @@ class _QuizState extends State<Quiz> {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       backgroundColor: const Color(0xff6cc6cb),
       body: SafeArea(
@@ -87,12 +86,12 @@ class _QuizState extends State<Quiz> {
                 ),
               ),
             ),
-            Expanded( 
+            Expanded(
                 flex: 6,
                 child: Container(
                   width: double.infinity,
                   decoration: const BoxDecoration(
-                    color: Color(0xff282c35),
+                      color: Color(0xff282c35),
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(30),
                           topRight: Radius.circular(30))),
@@ -116,6 +115,7 @@ class _QuizState extends State<Quiz> {
   }
 
   Column buildQuestions(Question question) {
+    
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -166,7 +166,8 @@ class _QuizState extends State<Quiz> {
             Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                    builder: ((context) => ResultPage(score: score, number: questions.length))));
+                    builder: ((context) =>
+                        ResultPage(score: score, number: questions.length))));
           }
         },
         child: Text(questionNumber < questions.length
@@ -218,9 +219,8 @@ class OptionsWidget extends StatelessWidget {
     );
   }
 
-
-  getOptionColor(Option option, Question question){
-        final isSelected = option == question.selectedOption;
+  getOptionColor(Option option, Question question) {
+    final isSelected = option == question.selectedOption;
     if (question.isLocked) {
       if (isSelected) {
         return option.isCorrect ? Colors.green : Colors.red;
@@ -249,22 +249,22 @@ class OptionsWidget extends StatelessWidget {
       if (isSelected) {
         return option.isCorrect
             ? const Padding(
-              padding:  EdgeInsets.symmetric(horizontal: 10.0),
-              child: Icon(
+                padding: EdgeInsets.symmetric(horizontal: 10.0),
+                child: Icon(
                   Icons.check_circle_outline_rounded,
                   color: Colors.green,
                 ),
-            )
+              )
             : const Padding(
-              padding:  EdgeInsets.symmetric(horizontal: 10.0),
-              child: Icon(
+                padding: EdgeInsets.symmetric(horizontal: 10.0),
+                child: Icon(
                   Icons.cancel_outlined,
                   color: Colors.red,
                 ),
-            );
+              );
       } else if (option.isCorrect) {
         return const Padding(
-              padding:  EdgeInsets.symmetric(horizontal: 10.0),
+          padding: EdgeInsets.symmetric(horizontal: 10.0),
           child: Icon(
             Icons.check_circle_outline_rounded,
             color: Colors.green,

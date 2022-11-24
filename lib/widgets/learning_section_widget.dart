@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
-import '../const/learning_section_class.dart';
 import '../const/programming_language.dart';
-import '../const/tab_manager.dart';
-import '../screens/python_course_screen.dart';
 
 class LearningSectionWidget extends StatelessWidget {
   final ProgrammingLanguage programmingLanguage;

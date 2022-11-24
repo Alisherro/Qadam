@@ -11,10 +11,10 @@ class CourseProgressIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 16),
+      padding: const EdgeInsets.symmetric(vertical: 16),
       child: Container(
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(12)),
+            borderRadius: const BorderRadius.all(Radius.circular(12)),
             border:
                 Border.all(width: 3, color: Theme.of(context).backgroundColor)),
         child: Padding(
@@ -30,7 +30,7 @@ class CourseProgressIndicator extends StatelessWidget {
                   ),
                   Text(
                     '${language.courseProgress}%',
-                    style: TextStyle(fontFamily: 'Comfortaa', fontSize: 18),
+                    style: const TextStyle(fontFamily: 'Comfortaa', fontSize: 18),
                   ),
                 ],
               ),
