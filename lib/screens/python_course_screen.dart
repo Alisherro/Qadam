@@ -94,7 +94,7 @@ class _PythonCourseScreenState extends State<PythonCourseScreen> {
                                     BorderRadius.all(Radius.circular(14)),
                                 image: DecorationImage(
                                   fit: BoxFit.cover,
-                                  image:  AssetImage('assets/images/qadam.jpg'),
+                                  image: AssetImage('assets/images/Python_logo_icon.jpg'),
                                 ),
                               ),
                             ),
@@ -124,8 +124,11 @@ class _PythonCourseScreenState extends State<PythonCourseScreen> {
                           ],
                         ),
                         Text(
-                          'бесплатно',
-                          style: TextStyle(color: Colors.white, fontSize: 18),
+                          'Бесплатно',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold),
                         ),
                       ],
                     ),
@@ -137,7 +140,7 @@ class _PythonCourseScreenState extends State<PythonCourseScreen> {
               flex: 5,
               child: Container(
                 decoration: BoxDecoration(
-                    color: Theme.of(context).bottomAppBarColor,
+                    color: Theme.of(context).scaffoldBackgroundColor,
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(38),
                         topRight: Radius.circular(38))),

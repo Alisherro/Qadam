@@ -89,24 +89,29 @@ class HomeScreen extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          Container(
-            height: 120,
-            child: ListView.separated(
-              shrinkWrap: true,
-              scrollDirection: Axis.horizontal,
-              itemBuilder: (context, int index) {
-                return CircleStory(
-                  language: languages[index],
-                );
-              },
-              itemCount: languages.length,
-              separatorBuilder: (BuildContext context, int index) {
-                return const SizedBox(width: 12);
-              },
-            ),
+          Divider(),
+          Text(
+            'Courses',
+            style: TextStyle(fontSize: 32),
           ),
+          // Container(
+          //   height: 120,
+          //   child: ListView.separated(
+          //     shrinkWrap: true,
+          //     scrollDirection: Axis.horizontal,
+          //     itemBuilder: (context, int index) {
+          //       return CircleStory(
+          //         language: languages[index],
+          //       );
+          //     },
+          //     itemCount: languages.length,
+          //     separatorBuilder: (BuildContext context, int index) {
+          //       return const SizedBox(width: 12);
+          //     },
+          //   ),
+          // ),
           Expanded(
-            child: ListView.builder(
+            child: GridView.builder(
               primary: false,
               physics: const NeverScrollableScrollPhysics(),
               shrinkWrap: true,
@@ -114,8 +119,12 @@ class HomeScreen extends StatelessWidget {
               itemBuilder: (context, index) =>
                   LearningSectionWidget(programmingLanguage: languages[index]),
               itemCount: languages.length,
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+              ),
             ),
           ),
+          Divider(),
           const SizedBox(
             height: 20,
           ),

@@ -7,6 +7,7 @@ class CodeEditorScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return WebView(
+      gestureNavigationEnabled: false,
       initialUrl: 'https://flutter.dev',
       onWebResourceError: (WebResourceError webviewerrr) {
         print("Handle your Error Page here");

@@ -107,7 +107,8 @@ class QadamTheme {
 
   static ThemeData dark() {
     return ThemeData(
-      backgroundColor: Colors.white24,
+      scaffoldBackgroundColor: Color(0xff282c35),
+      backgroundColor: Colors.black26,
       fontFamily: 'Raleway',
       brightness: Brightness.dark,
       appBarTheme: AppBarTheme(
