@@ -69,10 +69,10 @@ class HomeScreen extends StatelessWidget {
   ];
 
   final List<CodeTask> codeTasks = [
-    CodeTask('a+b', 'Easy'),
-    CodeTask('Fibonacci', 'Hard'),
-    CodeTask('Revers', 'Hard'),
-    CodeTask('days', 'Easy'),
+    CodeTask('a+b', 'Easy', true),
+    CodeTask('Fibonacci', 'Hard', false),
+    CodeTask('Revers', 'Hard', true),
+    CodeTask('days', 'Easy', true),
   ];
 
   @override
@@ -81,35 +81,66 @@ class HomeScreen extends StatelessWidget {
       padding: const EdgeInsets.only(right: 16, left: 16, top: 10),
       child: ListView(
         children: [
-          Text(
-            'Привет, Алишер!',
-            textAlign: TextAlign.start,
-            style: TextStyle(fontSize: 38, fontWeight: FontWeight.w600),
+          SizedBox(
+            height: 15,
           ),
-          const SizedBox(
-            height: 10,
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[Icon(Icons.menu), Icon(Icons.person)],
+              ),
+              SizedBox(height: 30),
+              Text(
+                "Hey Alex,",style: TextStyle(fontSize: 36),
+              ),
+
+              Text(
+                "Find a course you want to learn",
+                style: TextStyle(fontSize: 20),
+              ),
+              Container(
+                margin: EdgeInsets.symmetric(vertical: 30),
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+                height: 60,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: Color(0xFFF5F5F7),
+                  borderRadius: BorderRadius.circular(40),
+                ),
+                child: Row(
+                  children: [
+                    Icon(
+                      Icons.search,
+                      color: Theme.of(context).scaffoldBackgroundColor,
+                    ),
+                    SizedBox(width: 16),
+                    Text(
+                      "Search for anything",
+                      style: TextStyle(
+                        fontSize: 18,
+                        color: Color(0xFFA0A5BD),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ],
           ),
-          Divider(),
-          Text(
-            'Courses',
-            style: TextStyle(fontSize: 32),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Курсы',
+                style: TextStyle(fontSize: 24),
+              ),
+              Divider(
+                thickness: 2,
+              )
+            ],
           ),
-          // Container(
-          //   height: 120,
-          //   child: ListView.separated(
-          //     shrinkWrap: true,
-          //     scrollDirection: Axis.horizontal,
-          //     itemBuilder: (context, int index) {
-          //       return CircleStory(
-          //         language: languages[index],
-          //       );
-          //     },
-          //     itemCount: languages.length,
-          //     separatorBuilder: (BuildContext context, int index) {
-          //       return const SizedBox(width: 12);
-          //     },
-          //   ),
-          // ),
+          const SizedBox(height: 10),
           Expanded(
             child: GridView.builder(
               primary: false,
@@ -124,26 +155,40 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
           ),
-          Divider(),
           const SizedBox(
             height: 20,
           ),
-          Text(
-            'Test urself',
-            style: Theme.of(context).textTheme.headline2,
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Задачи',
+                style: TextStyle(fontSize: 24),
+              ),
+              Divider(
+                thickness: 2,
+              )
+            ],
           ),
-          Container(
-            height: 100,
-            child: ListView.builder(
-              itemCount: codeTasks.length,
+          SizedBox(
+            height: 20,
+          ),
+          Expanded(
+            child: ListView.separated(
+              primary: false,
+              physics: const NeverScrollableScrollPhysics(),
               shrinkWrap: true,
-              scrollDirection: Axis.horizontal,
-              itemBuilder: (context, int index) {
-                return CodeTaskWidget(
-                  codeTask: codeTasks[index],
-                );
-              },
+              itemBuilder: (context, index) => CodeTaskWidget(
+                codeTask: codeTasks[index],
+              ),
+              itemCount: codeTasks.length,
+              separatorBuilder: (context, index) => const SizedBox(
+                height: 25,
+              ),
             ),
+          ),
+          const SizedBox(
+            height: 20,
           ),
         ],
       ),

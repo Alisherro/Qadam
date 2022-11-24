@@ -127,7 +127,7 @@ class _PythonCourseScreenState extends State<PythonCourseScreen> {
                           'Бесплатно',
                           style: TextStyle(
                               color: Colors.white,
-                              fontSize: 24,
+                              fontSize: 20,
                               fontWeight: FontWeight.bold),
                         ),
                       ],

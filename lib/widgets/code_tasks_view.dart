@@ -9,36 +9,46 @@ class CodeTaskWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding:const EdgeInsets.all(8),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            decoration: const BoxDecoration(
-              gradient: LinearGradient(colors: [
-                Colors.green,
-                Colors.blueGrey,
-              ],),
-                borderRadius: BorderRadius.all(Radius.circular(16)),
-                color: Colors.grey),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
-              child: Text(
-                codeTask.name,
-                style: Theme.of(context).textTheme.headline5,
-              ),
-            ),
-          ),
-          const SizedBox(height: 5),
-          Row(
-            children: [
-              const SizedBox(width: 5,),
-              Text(codeTask.difficulty, style: Theme.of(context).textTheme.headline6,)
-            ],
-          )
-        ],
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.all(Radius.circular(16)),
+        gradient: LinearGradient(
+          colors: [
+            Color(0xff667eea),
+            Color(0xff764ba2),
+
+          ]
+        )
       ),
+      child: Padding(
+        padding: EdgeInsets.all(16),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  codeTask.name,
+                  style: TextStyle(
+                    fontSize: 26,
+                    fontWeight: FontWeight.bold
+                  ),
+                ),
+                Text(
+                  codeTask.difficulty,
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w400
+                  ),
+                ),
+              ],
+            ),
+            codeTask.isSolved? Icon(Icons.circle_outlined):
+            Icon(Icons.task_alt),
+          ],
+        ),
+      )
     );
   }
 }

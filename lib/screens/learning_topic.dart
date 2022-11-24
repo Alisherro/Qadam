@@ -4,20 +4,14 @@ import 'package:qadam/screens/quiz.dart';
 class UnbordingContent {
   String discription;
 
-  UnbordingContent(
-      {required this.discription});
+  UnbordingContent({required this.discription});
 }
 
 List<UnbordingContent> contents = [
-  UnbordingContent(
-      discription: "assets/images/first.jpg"),
-  UnbordingContent(
-      discription:
-          "assets/images/second.jpg"),
-  UnbordingContent(
-      discription: "assets/images/third.jpg"),
-  UnbordingContent(
-      discription: "assets/images/fourth.jpg"),
+  UnbordingContent(discription: "assets/images/first.jpg"),
+  UnbordingContent(discription: "assets/images/second.jpg"),
+  UnbordingContent(discription: "assets/images/third.jpg"),
+  UnbordingContent(discription: "assets/images/fourth.jpg"),
 ];
 
 class PythonTopic1 extends StatefulWidget {
@@ -120,7 +114,9 @@ class _PythonTopic1State extends State<PythonTopic1> {
                                       crossAxisAlignment:
                                           CrossAxisAlignment.center,
                                       children: [
-                                        const SizedBox(height: 10,),
+                                        const SizedBox(
+                                          height: 10,
+                                        ),
                                         Image.asset(contents[i].discription),
                                         Container(
                                           height: 60,
@@ -130,11 +126,16 @@ class _PythonTopic1State extends State<PythonTopic1> {
                                             child: Icon(currentIndex ==
                                                     contents.length - 1
                                                 ? Icons.question_mark_rounded
-                                                : Icons.arrow_forward_ios_rounded),
+                                                : Icons
+                                                    .arrow_forward_ios_rounded),
                                             onPressed: () {
                                               if (currentIndex ==
                                                   contents.length - 1) {
-                                                Navigator.pushNamed(context, '/python/1/quiz');
+                                                Navigator.pushReplacement(
+                                                    context,
+                                                    MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            Quiz()));
                                               }
                                               _controller!.nextPage(
                                                 duration: const Duration(
@@ -152,9 +153,7 @@ class _PythonTopic1State extends State<PythonTopic1> {
                 );
               },
             ),
-            
           ),
-          
         ],
       ),
     );

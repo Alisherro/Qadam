@@ -49,7 +49,7 @@ class LearningSectionWidget extends StatelessWidget {
                   children: [
                     Text(
                       programmingLanguage.name,
-                      style: const TextStyle(fontSize: 36),
+                      style: const TextStyle(fontSize: 30),
                     ),
                     Text(
                       programmingLanguage.difficulty,
@@ -69,7 +69,7 @@ class LearningSectionWidget extends StatelessWidget {
                       '${programmingLanguage.lessonsAmount} lessons',
                       textAlign: TextAlign.end,
                       style: const TextStyle(
-                        fontSize: 18.0,
+                        fontSize: 16.0,
                         fontWeight: FontWeight.w500,
                         color: Colors.white,
                       ),

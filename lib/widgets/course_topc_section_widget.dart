@@ -32,7 +32,7 @@ class CourseTopicSectionWidget extends StatelessWidget {
                     data.topicName,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
                   ),
                   Text(
                     data.duration,
