@@ -83,21 +83,21 @@ class _QuizState extends State<Quiz> {
               child: Center(
                 child: Text(
                   '$questionNumber/${questions.length}',
-                  style: const TextStyle(fontSize: 40, color: Colors.white),
+                  style: const TextStyle(fontSize: 40),
                 ),
               ),
             ),
-            Expanded(
+            Expanded( 
                 flex: 6,
                 child: Container(
                   width: double.infinity,
                   decoration: const BoxDecoration(
-                      color: Colors.white,
+                    color: Color(0xff282c35),
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(30),
                           topRight: Radius.circular(30))),
                   child: Container(
-                    margin: EdgeInsets.all(20.0),
+                    margin: const EdgeInsets.all(20.0),
                     child: PageView.builder(
                       controller: controller,
                       itemCount: questions.length,
@@ -200,7 +200,7 @@ class OptionsWidget extends StatelessWidget {
         child: Container(
           height: 50,
           decoration: BoxDecoration(
-              color: Colors.grey.shade200,
+              color: getOptionColor(option, question),
               borderRadius: BorderRadius.circular(15),
               border: Border.all(color: color)),
           child: Row(
@@ -218,6 +218,19 @@ class OptionsWidget extends StatelessWidget {
     );
   }
 
+
+  getOptionColor(Option option, Question question){
+        final isSelected = option == question.selectedOption;
+    if (question.isLocked) {
+      if (isSelected) {
+        return option.isCorrect ? Colors.green : Colors.red;
+      } else if (option.isCorrect) {
+        return Colors.green;
+      }
+    }
+    return const Color(0xff4b5363);
+  }
+
   getColor(Option option, Question question) {
     final isSelected = option == question.selectedOption;
     if (question.isLocked) {
@@ -227,7 +240,7 @@ class OptionsWidget extends StatelessWidget {
         return Colors.green;
       }
     }
-    return Colors.grey.shade300;
+    return const Color(0xff3c4454);
   }
 
   Widget getIcon(Option option, Question question) {
@@ -235,18 +248,27 @@ class OptionsWidget extends StatelessWidget {
     if (question.isLocked) {
       if (isSelected) {
         return option.isCorrect
-            ? const Icon(
-                Icons.check_circle_outline_rounded,
-                color: Colors.green,
-              )
-            : const Icon(
-                Icons.cancel_outlined,
-                color: Colors.red,
-              );
+            ? const Padding(
+              padding:  EdgeInsets.symmetric(horizontal: 10.0),
+              child: Icon(
+                  Icons.check_circle_outline_rounded,
+                  color: Colors.green,
+                ),
+            )
+            : const Padding(
+              padding:  EdgeInsets.symmetric(horizontal: 10.0),
+              child: Icon(
+                  Icons.cancel_outlined,
+                  color: Colors.red,
+                ),
+            );
       } else if (option.isCorrect) {
-        return const Icon(
-          Icons.check_circle_outline_rounded,
-          color: Colors.green,
+        return const Padding(
+              padding:  EdgeInsets.symmetric(horizontal: 10.0),
+          child: Icon(
+            Icons.check_circle_outline_rounded,
+            color: Colors.green,
+          ),
         );
       }
     }
