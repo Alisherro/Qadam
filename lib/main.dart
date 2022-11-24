@@ -34,8 +34,8 @@ class _MyAppState extends State<MyApp> {
         initialRoute: '/',
         routes: {
           '/': (context) => const LoginScreen(),
-          '/python':(context) =>  PythonCourseScreen(),
-          '/python/1':(context) =>  PythonTopic1(),
+          '/python':(context) =>  const PythonCourseScreen(),
+          '/python/1':(context) => const PythonTopic1(),
         },
         debugShowCheckedModeBanner: false,
         theme: _lightTheme,

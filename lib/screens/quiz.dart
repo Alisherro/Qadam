@@ -22,22 +22,28 @@ class Option {
   Option({required this.isCorrect, required this.text});
 }
 
+const String print = 'print()';
+
 final questions = [
   Question(text: 'Команда print() используется для ', options: [
     Option(isCorrect: true, text: 'Вывода данных на экран'),
     Option(isCorrect: false, text: 'Считывания данных с клавиатуры'),
     Option(isCorrect: false, text: 'Для работы с циклом'),
+    Option(isCorrect: false, text: 'Импортируем библиотеку'),
   ]),
   Question(text: 'Команда input() используется для ', options: [
     Option(isCorrect: false, text: 'Вывода данных на экран'),
+    Option(isCorrect: false, text: 'Импортируем библиотеку'),
     Option(isCorrect: true, text: 'Считывания данных с клавиатуры'),
     Option(isCorrect: false, text: 'Для работы с циклом'),
   ]),
-  Question(text: 'Команда print() используется для ', options: [
-    Option(isCorrect: true, text: 'Вывода данных на экран'),
-    Option(isCorrect: false, text: 'Считывания данных с клавиатуры'),
-    Option(isCorrect: false, text: 'Для работы с циклом'),
-  ]),
+  Question(
+      text: 'Что выведет следующая программа?\nprint("Hello world!")',
+      options: [
+        Option(isCorrect: true, text: 'Hello world!'),
+        Option(isCorrect: false, text: '"Hello world!"'),
+        Option(isCorrect: false, text: 'World Hello!'),
+      ]),
   Question(text: 'Команда print() используется для ', options: [
     Option(isCorrect: true, text: 'Вывода данных на экран'),
     Option(isCorrect: false, text: 'Считывания данных с клавиатуры'),
@@ -67,25 +73,42 @@ class _QuizState extends State<Quiz> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xff6cc6cb),
       body: SafeArea(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text(
-              'Question $questionNumber/${questions.length}',
-              style: const TextStyle(fontSize: 20),
+            Expanded(
+              flex: 1,
+              child: Center(
+                child: Text(
+                  '$questionNumber/${questions.length}',
+                  style: const TextStyle(fontSize: 40, color: Colors.white),
+                ),
+              ),
             ),
             Expanded(
-                child: PageView.builder(
-              controller: controller,
-              itemCount: questions.length,
-              itemBuilder: ((context, index) {
-                final question = questions[index];
-                return buildQuestions(question);
-              }),
-              physics: const NeverScrollableScrollPhysics(),
-            )),
-            _isLocked ? buildElevatedButton() : const SizedBox.shrink(),
+                flex: 6,
+                child: Container(
+                  width: double.infinity,
+                  decoration: const BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(30),
+                          topRight: Radius.circular(30))),
+                  child: Container(
+                    margin: EdgeInsets.all(20.0),
+                    child: PageView.builder(
+                      controller: controller,
+                      itemCount: questions.length,
+                      itemBuilder: ((context, index) {
+                        final question = questions[index];
+                        return buildQuestions(question);
+                      }),
+                      physics: const NeverScrollableScrollPhysics(),
+                    ),
+                  ),
+                )),
           ],
         ),
       ),
@@ -99,7 +122,8 @@ class _QuizState extends State<Quiz> {
         const SizedBox(
           height: 32,
         ),
-        Text(question.text, style: const TextStyle(fontSize: 30)),
+        Text(question.text,
+            textAlign: TextAlign.center, style: const TextStyle(fontSize: 20)),
         const SizedBox(
           height: 32,
         ),
@@ -120,7 +144,8 @@ class _QuizState extends State<Quiz> {
             }
           },
           question: question,
-        ))
+        )),
+        _isLocked ? buildElevatedButton() : const SizedBox.shrink(),
       ],
     );
   }
@@ -170,18 +195,24 @@ class OptionsWidget extends StatelessWidget {
     final Color color = getColor(option, question);
     return GestureDetector(
       onTap: () => onClickedOption(option),
-      child: Container(
-        height: 50,
-        decoration: BoxDecoration(
-            color: Colors.grey.shade200,
-            borderRadius: BorderRadius.circular(15),
-            border: Border.all(color: color)),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(option.text, style: const TextStyle(fontSize: 20)),
-            getIcon(option, question)
-          ],
+      child: Padding(
+        padding: const EdgeInsets.only(top: 10.0),
+        child: Container(
+          height: 50,
+          decoration: BoxDecoration(
+              color: Colors.grey.shade200,
+              borderRadius: BorderRadius.circular(15),
+              border: Border.all(color: color)),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                child: Text(option.text, style: const TextStyle(fontSize: 15)),
+              ),
+              getIcon(option, question)
+            ],
+          ),
         ),
       ),
     );
