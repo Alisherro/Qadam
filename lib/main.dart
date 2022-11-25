@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:qadam/const/qadam_theme.dart';
 import 'package:qadam/l10n/local.dart';
+import 'package:qadam/screens/code_editor_screen.dart';
 import 'package:qadam/screens/learning_topic_1.dart';
 import 'package:qadam/screens/learning_topic_2.dart';
 import 'package:qadam/screens/learning_topic_3.dart';
@@ -40,7 +41,7 @@ class _MyAppState extends State<MyApp> {
         translations: LocalString(),
         initialRoute: '/',
         routes: {
-          '/': (context) =>  const LoginScreen(),
+          '/': (context) =>  const CodeEditorScreen(),
           '/main': (context) =>  MainScreen(),
           '/python':(context) =>  const PythonCourseScreen(),
           '/python/1':(context) =>  const PythonTopic1(),

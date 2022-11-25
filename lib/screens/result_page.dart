@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
 // ignore: must_be_immutable
@@ -25,8 +26,8 @@ class _ResultPageState extends State<ResultPage> {
 
   @override
   Widget build(BuildContext context) {
-    String cong = 'Құттықтаймыз!';
-    String los = 'Жаман емес, бірақ қайталап көріңіз!';
+    String cong = 'Поздравляем!';
+    String los = 'Неплохо, только попробуй еще раз!';
     return Scaffold(
       body: Center(
         child: Container(
@@ -64,7 +65,7 @@ class _ResultPageState extends State<ResultPage> {
                     borderRadius: BorderRadius.circular(12), // <-- Radius
                   ),
                 ),
-                child: const Text('Жалғастыру'),
+                child: Text('con'.tr),
               )
             ],
           ),

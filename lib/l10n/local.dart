@@ -33,7 +33,7 @@ class LocalString extends Translations {
     },
     'ru_RU':{
       'in':'Войти',
-      'forget':'Не зарегистрированы?',
+      'forget':'Нет аккаунта? ',
       'forget2':'Зарегестрироваться',
       'forget3':'или исопользуйте',
       'slogan':'Code',
