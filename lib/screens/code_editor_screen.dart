@@ -23,8 +23,6 @@ class _CodeEditorScreenState extends State<CodeEditorScreen> {
             onWebViewCreated: (WebViewController webViewController) {
               _controller.complete(webViewController);
               webViewController.runJavascript(
-                
-                  "window.onscroll = function () { window.scrollTo(130, 130); };"
                   "const elements = document.getElementsByClassName(\"jsx-3405587965 css-1pspcfr\");"
                   "while (elements.length > 0) elements[0].remove();"
                   "const element = document.getElementsByClassName(\"jsx-428302334 v-stack\");"
@@ -37,6 +35,7 @@ class _CodeEditorScreenState extends State<CodeEditorScreen> {
                   "while (elem.length > 0) elem[0].remove();"
                   "const el = document.getElementsByClassName(\"jsx-339383026 cursor-container\");"
                   "while (el.length > 0) el[0].remove();"
+                  "window.onscroll = function () { window.scrollTo(130, 130); };"
                   "const ele = document.getElementsByClassName(\"jsx-1099629460 right\");"
                   "while (ele.length > 0) ele[0].remove();");
             },

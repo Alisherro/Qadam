@@ -106,58 +106,62 @@ class _PythonTopic1State extends State<PythonTopic1> {
                               borderRadius: BorderRadius.only(
                                   topLeft: Radius.circular(30),
                                   topRight: Radius.circular(30))),
-                          child: Expanded(
-                            flex: 5,
-                            child: PageView.builder(
-                              controller: _controller,
-                              itemCount: contents.length,
-                              onPageChanged: (int index) {
-                                setState(() {
-                                  currentIndex = index;
-                                });
-                              },
-                              itemBuilder: (_, i) {
-                                return Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    const SizedBox(
-                                      height: 45,
-                                    ),
-                                    Expanded(
-                                        child:
-                                            Image.asset(contents[i].discription)),
-                                    Container(
-                                      height: 60,
-                                      margin: const EdgeInsets.all(40),
-                                      width: double.infinity,
-                                      child: FloatingActionButton(
-                                        child: Icon(currentIndex ==
-                                                contents.length - 1
-                                            ? Icons.question_mark_rounded
-                                            : Icons.arrow_forward_ios_rounded),
-                                        onPressed: () {
-                                          if (currentIndex ==
-                                              contents.length - 1) {
-                                            Navigator.pushReplacement(
-                                                context,
-                                                MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        Quiz1()));
-                                          }
-                                          _controller!.nextPage(
-                                            duration:
-                                                const Duration(milliseconds: 100),
-                                            curve: Curves.bounceIn,
-                                          );
-                                        },
-                                      ),
-                                    )
-                                  ],
-                                );
-                              },
-                            ),
+                          child: Column(
+                            children: [
+                              Expanded(
+                                flex: 5,
+                                child: PageView.builder(
+                                  controller: _controller,
+                                  itemCount: contents.length,
+                                  onPageChanged: (int index) {
+                                    setState(() {
+                                      currentIndex = index;
+                                    });
+                                  },
+                                  itemBuilder: (_, i) {
+                                    return Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      crossAxisAlignment: CrossAxisAlignment.center,
+                                      children: [
+                                        const SizedBox(
+                                          height: 45,
+                                        ),
+                                        Expanded(
+                                            child:
+                                                Image.asset(contents[i].discription)),
+                                        Container(
+                                          height: 60,
+                                          margin: const EdgeInsets.all(40),
+                                          width: double.infinity,
+                                          child: FloatingActionButton(
+                                            child: Icon(currentIndex ==
+                                                    contents.length - 1
+                                                ? Icons.question_mark_rounded
+                                                : Icons.arrow_forward_ios_rounded),
+                                            onPressed: () {
+                                              if (currentIndex ==
+                                                  contents.length - 1) {
+                                                Navigator.pushReplacement(
+                                                    context,
+                                                    MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            Quiz1()));
+                                              }
+                                              _controller!.nextPage(
+                                                duration:
+                                                    const Duration(milliseconds: 100),
+                                                curve: Curves.bounceIn,
+                                              );
+                                            },
+                                          ),
+                                        )
+                                      ],
+                                    );
+                                  },
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ),

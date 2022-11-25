@@ -26,7 +26,6 @@ class HomeScreen extends StatelessWidget {
             content: Container(
               width: double.maxFinite,
               child: ListView.separated(
-                  
                   shrinkWrap: true,
                   itemBuilder: (context, index) {
                     return Padding(
@@ -126,7 +125,7 @@ class HomeScreen extends StatelessWidget {
             height: 15,
           ),
           Container(
-            height: MediaQuery.of(context).size.height/2.6,
+            height: MediaQuery.of(context).size.height / 2.6,
             child: Column(
               children: [
                 Expanded(
@@ -142,11 +141,12 @@ class HomeScreen extends StatelessWidget {
                             },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.transparent,
-                            
                             ),
                             child: Padding(
-                              padding: const EdgeInsets.symmetric(vertical: 5.0),
-                              child: Text('changelang'.tr, style: const TextStyle(fontSize: 16)),
+                              padding:
+                                  const EdgeInsets.symmetric(vertical: 5.0),
+                              child: Text('changelang'.tr,
+                                  style: const TextStyle(fontSize: 16)),
                             ),
                           ),
                           const Icon(Icons.person)
@@ -155,7 +155,8 @@ class HomeScreen extends StatelessWidget {
                       const SizedBox(height: 30),
                       Text(
                         'greeting'.tr,
-                        style: const TextStyle(fontSize: 36),
+                        style: const TextStyle(
+                            fontSize: 36, fontWeight: FontWeight.bold),
                       ),
                       Text(
                         'greeting2'.tr,
@@ -163,8 +164,8 @@ class HomeScreen extends StatelessWidget {
                       ),
                       Container(
                         margin: const EdgeInsets.symmetric(vertical: 30),
-                        padding:
-                            const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 20, vertical: 16),
                         height: 60,
                         width: double.infinity,
                         decoration: BoxDecoration(
@@ -208,8 +209,7 @@ class HomeScreen extends StatelessWidget {
           ),
           const SizedBox(height: 10),
           Container(
-            
-            height: MediaQuery.of(context).size.height/2.25,
+            height: MediaQuery.of(context).size.height / 2.25,
             child: Column(
               children: [
                 Expanded(
@@ -219,10 +219,11 @@ class HomeScreen extends StatelessWidget {
                       physics: const NeverScrollableScrollPhysics(),
                       shrinkWrap: true,
                       scrollDirection: Axis.vertical,
-                      itemBuilder: (context, index) =>
-                          LearningSectionWidget(programmingLanguage: languages[index]),
+                      itemBuilder: (context, index) => LearningSectionWidget(
+                          programmingLanguage: languages[index]),
                       itemCount: languages.length,
-                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 2,
                       ),
                     ),
@@ -250,7 +251,7 @@ class HomeScreen extends StatelessWidget {
             height: 20,
           ),
           SizedBox(
-            height: MediaQuery.of(context).size.height/1.8,
+            height: MediaQuery.of(context).size.height / 1.8,
             child: Column(
               children: [
                 Expanded(
