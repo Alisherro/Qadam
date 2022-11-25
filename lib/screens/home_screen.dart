@@ -82,61 +82,69 @@ class HomeScreen extends StatelessWidget {
           const SizedBox(
             height: 15,
           ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[const Icon(Icons.menu), const Icon(Icons.person)],
-              ),
-              const SizedBox(height: 30),
-              const Text(
-                'Қайырлы күн',style: TextStyle(fontSize: 36),
-              ),
-
-              const Text(
-                "Оқығыңыз келетін курсты табыңыз",
-                style: TextStyle(fontSize: 20),
-              ),
-              Container(
-                margin: const EdgeInsets.symmetric(vertical: 30),
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
-                height: 60,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: const Color(0xFFF5F5F7),
-                  borderRadius: BorderRadius.circular(40),
-                ),
-                child: Row(
-                  children: [
-                    Icon(
-                      Icons.search,
-                      color: Theme.of(context).scaffoldBackgroundColor,
-                    ),
-                    const SizedBox(width: 16),
-                    const Text(
-                      "Іздеу",
-                      style: TextStyle(
-                        fontSize: 18,
-                        color: Color(0xFFA0A5BD),
-                      ),
-                    )
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    const Icon(Icons.menu),
+                    const Icon(Icons.person)
                   ],
                 ),
-              ),
-            ],
+                const SizedBox(height: 30),
+                const Text(
+                  'Қайырлы күн',
+                  style: TextStyle(fontSize: 36),
+                ),
+                const Text(
+                  "Оқығыңыз келетін курсты табыңыз",
+                  style: TextStyle(fontSize: 20),
+                ),
+                Container(
+                  margin: const EdgeInsets.symmetric(vertical: 30),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+                  height: 60,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: const Color(0xFFF5F5F7),
+                    borderRadius: BorderRadius.circular(40),
+                  ),
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.search,
+                        color: Theme.of(context).scaffoldBackgroundColor,
+                      ),
+                      const SizedBox(width: 16),
+                      const Text(
+                        "Іздеу",
+                        style: TextStyle(
+                          fontSize: 18,
+                          color: Color(0xFFA0A5BD),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: const  [
-              Text(
-                'Курстар',
-                style: TextStyle(fontSize: 24),
-              ),
-              Divider(
-                thickness: 2,
-              )
-            ],
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: const [
+                Text(
+                  'Курстар',
+                  style: TextStyle(fontSize: 24),
+                ),
+                Divider(
+                  thickness: 2,
+                )
+              ],
+            ),
           ),
           const SizedBox(height: 10),
           Expanded(
@@ -156,17 +164,19 @@ class HomeScreen extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
-              Text(
-                'Тапсырмалар',
-                style: TextStyle(fontSize: 24),
-              ),
-              Divider(
-                thickness: 2,
-              )
-            ],
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: const [
+                Text(
+                  'Тапсырмалар',
+                  style: TextStyle(fontSize: 24),
+                ),
+                Divider(
+                  thickness: 2,
+                )
+              ],
+            ),
           ),
           const SizedBox(
             height: 20,
