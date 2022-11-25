@@ -29,7 +29,7 @@ class _CodeEditorScreenState extends State<CodeEditorScreen> {
                   "while (element.length > 0) element[0].remove();"
                   "const elemen = document.getElementsByClassName(\"jsx-3141006289 feature-previews\");"
                   "while (elemen.length > 0) elemen[0].remove();"
-                   "const eleme = document.getElementsByClassName(\"jsx-779354107 signup-footer\");"
+                  "const eleme = document.getElementsByClassName(\"jsx-779354107 signup-footer\");"
                   "while (eleme.length > 0) eleme[0].remove();"
                   "const elem = document.getElementsByClassName(\"jsx-43d8345bc5475e3f footer\");"
                   "while (elem.length > 0) elem[0].remove();"

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 
 import '../widgets/sign_up_button.dart';
 
@@ -73,13 +74,13 @@ class _LoginScreenState extends State<LoginScreen> {
                             color: Colors.white,
                             border: Border.all(color: Colors.grey.shade300),
                             borderRadius: BorderRadius.circular(12)),
-                        child: const Padding(
-                          padding: EdgeInsets.only(left: 20, right: 10),
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 20, right: 10),
                           child: TextField(
                             decoration: InputDecoration(
                               border: InputBorder.none,
-                              hintText: 'Электрондық пошта',
-                              hintStyle: TextStyle(color: Colors.grey),
+                              hintText: 'email'.tr,
+                              hintStyle: const TextStyle(color: Colors.grey),
                             ),
                           ),
                         ),
@@ -95,14 +96,14 @@ class _LoginScreenState extends State<LoginScreen> {
                             color: Colors.white,
                             border: Border.all(color: Colors.grey.shade300),
                             borderRadius: BorderRadius.circular(12)),
-                        child: const Padding(
-                          padding: EdgeInsets.only(left: 20, right: 10),
+                        child:  Padding(
+                          padding: const EdgeInsets.only(left: 20, right: 10),
                           child: TextField(
                             obscureText: true,
                             decoration: InputDecoration(
                               border: InputBorder.none,
-                              hintText: 'Құпия сөз',
-                              hintStyle: TextStyle(color: Colors.grey),
+                              hintText: 'password'.tr,
+                              hintStyle: const TextStyle(color: Colors.grey),
                             ),
                           ),
                         ),
@@ -124,10 +125,10 @@ class _LoginScreenState extends State<LoginScreen> {
                               Radius.circular(10),
                             ),
                           ),
-                          child: const Text(
-                            'Кіру',
+                          child: Text(
+                            'in'.tr,
                             textAlign: TextAlign.center,
-                            style: TextStyle(color: Colors.white),
+                            style: const TextStyle(color: Colors.white),
                           ),
                         ),
                       ),
@@ -138,12 +139,12 @@ class _LoginScreenState extends State<LoginScreen> {
                     Center(
                       child: RichText(
                         text: TextSpan(
-                          text: 'Есептік жазбаңыз жоқ па?',
+                          text: 'forget'.tr,
                           style: Theme.of(context).textTheme.headline5,
-                          children: const [
+                          children: [
                             TextSpan(
-                              text: ' Тіркелу',
-                              style: TextStyle(
+                              text: ' forget2'.tr,
+                              style: const TextStyle(
                                   color: Colors.blueAccent, fontSize: 18),
                             )
                           ],
@@ -151,7 +152,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     Text(
-                      'немесе пайдаланыңыз',
+                      'forget3'.tr,
                       style: Theme.of(context).textTheme.headline5,
                     ),
                     Container(

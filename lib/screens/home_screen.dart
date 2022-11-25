@@ -78,6 +78,7 @@ class HomeScreen extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(right: 16, left: 16, top: 10),
       child: ListView(
+        shrinkWrap: true,
         children: [
           const SizedBox(
             height: 15,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:qadam/const/qadam_theme.dart';
+import 'package:qadam/l10n/local.dart';
 import 'package:qadam/screens/learning_topic_1.dart';
 import 'package:qadam/screens/learning_topic_2.dart';
 import 'package:qadam/screens/learning_topic_3.dart';
@@ -9,6 +10,7 @@ import 'package:qadam/screens/main_screen.dart';
 import 'package:qadam/screens/python_course_screen.dart';
 import 'package:qadam/screens/quiz1.dart';
 import 'const/tab_manager.dart';
+import 'package:get/get.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,7 +35,9 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<TabManager>(
       create: (context) => TabManager(),
-      child: MaterialApp(
+      child: GetMaterialApp(
+        locale: const Locale('ru','RU'),
+        translations: LocalString(),
         initialRoute: '/',
         routes: {
           '/': (context) =>  const LoginScreen(),

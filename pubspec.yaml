@@ -21,6 +21,9 @@ dependencies:
   percent_indicator: ^4.0.1
   flutter_svg: ^1.1.6
   webview_flutter: ^3.0.4
+  flutter_localizations:
+    sdk: flutter
+  get: ^4.6.5
 
 
 dev_dependencies:
