@@ -121,134 +121,155 @@ class HomeScreen extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(right: 16, left: 16, top: 10),
       child: ListView(
-        shrinkWrap: true,
         children: [
           const SizedBox(
             height: 15,
           ),
-          Expanded(
+          Container(
+            height: MediaQuery.of(context).size.height/2.6,
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    ElevatedButton(
-                      onPressed: () {
-                        buildLanguageDialog(context);
-                      },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.transparent,
-                      
+              children: [
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          ElevatedButton(
+                            onPressed: () {
+                              buildLanguageDialog(context);
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.transparent,
+                            
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 5.0),
+                              child: Text('changelang'.tr, style: const TextStyle(fontSize: 16)),
+                            ),
+                          ),
+                          const Icon(Icons.person)
+                        ],
                       ),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 5.0),
-                        child: Text('changelang'.tr, style: const TextStyle(fontSize: 16)),
-                      ),
-                    ),
-                    const Icon(Icons.person)
-                  ],
-                ),
-                const SizedBox(height: 30),
-                Text(
-                  'greeting'.tr,
-                  style: const TextStyle(fontSize: 36),
-                ),
-                Text(
-                  'greeting2'.tr,
-                  style: const TextStyle(fontSize: 20),
-                ),
-                Container(
-                  margin: const EdgeInsets.symmetric(vertical: 30),
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
-                  height: 60,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: const Color(0xFFF5F5F7),
-                    borderRadius: BorderRadius.circular(40),
-                  ),
-                  child: Row(
-                    children: [
-                      Icon(
-                        Icons.search,
-                        color: Theme.of(context).scaffoldBackgroundColor,
-                      ),
-                      const SizedBox(width: 16),
+                      const SizedBox(height: 30),
                       Text(
-                        'search'.tr,
-                        style: const TextStyle(
-                          fontSize: 18,
-                          color: Color(0xFFA0A5BD),
+                        'greeting'.tr,
+                        style: const TextStyle(fontSize: 36),
+                      ),
+                      Text(
+                        'greeting2'.tr,
+                        style: const TextStyle(fontSize: 20),
+                      ),
+                      Container(
+                        margin: const EdgeInsets.symmetric(vertical: 30),
+                        padding:
+                            const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+                        height: 60,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: const Color(0xFFF5F5F7),
+                          borderRadius: BorderRadius.circular(40),
                         ),
-                      )
+                        child: Row(
+                          children: [
+                            Icon(
+                              Icons.search,
+                              color: Theme.of(context).scaffoldBackgroundColor,
+                            ),
+                            const SizedBox(width: 16),
+                            Text(
+                              'search'.tr,
+                              style: const TextStyle(
+                                fontSize: 18,
+                                color: Color(0xFFA0A5BD),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                 ),
               ],
             ),
           ),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'course'.tr,
-                  style: const TextStyle(fontSize: 24),
-                ),
-                const Divider(
-                  thickness: 2,
-                )
-              ],
-            ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'course'.tr,
+                style: const TextStyle(fontSize: 24),
+              ),
+              const Divider(
+                thickness: 2,
+              )
+            ],
           ),
           const SizedBox(height: 10),
-          Expanded(
-            child: GridView.builder(
-              primary: false,
-              physics: const NeverScrollableScrollPhysics(),
-              shrinkWrap: true,
-              scrollDirection: Axis.vertical,
-              itemBuilder: (context, index) =>
-                  LearningSectionWidget(programmingLanguage: languages[index]),
-              itemCount: languages.length,
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-              ),
-            ),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          Expanded(
+          Container(
+            
+            height: MediaQuery.of(context).size.height/2.25,
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  'tasks'.tr,
-                  style: const TextStyle(fontSize: 24),
+                Expanded(
+                  child: Center(
+                    child: GridView.builder(
+                      primary: false,
+                      physics: const NeverScrollableScrollPhysics(),
+                      shrinkWrap: true,
+                      scrollDirection: Axis.vertical,
+                      itemBuilder: (context, index) =>
+                          LearningSectionWidget(programmingLanguage: languages[index]),
+                      itemCount: languages.length,
+                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                      ),
+                    ),
+                  ),
                 ),
-                const Divider(
-                  thickness: 2,
-                )
               ],
             ),
           ),
           const SizedBox(
             height: 20,
           ),
-          Expanded(
-            child: ListView.separated(
-              primary: false,
-              physics: const NeverScrollableScrollPhysics(),
-              shrinkWrap: true,
-              itemBuilder: (context, index) => CodeTaskWidget(
-                codeTask: codeTasks[index],
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'tasks'.tr,
+                style: const TextStyle(fontSize: 24),
               ),
-              itemCount: codeTasks.length,
-              separatorBuilder: (context, index) => const SizedBox(
-                height: 25,
-              ),
+              const Divider(
+                thickness: 2,
+              )
+            ],
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          SizedBox(
+            height: MediaQuery.of(context).size.height/1.8,
+            child: Column(
+              children: [
+                Expanded(
+                  child: Center(
+                    child: ListView.separated(
+                      primary: false,
+                      physics: const NeverScrollableScrollPhysics(),
+                      shrinkWrap: true,
+                      itemBuilder: (context, index) => CodeTaskWidget(
+                        codeTask: codeTasks[index],
+                      ),
+                      itemCount: codeTasks.length,
+                      separatorBuilder: (context, index) => const SizedBox(
+                        height: 25,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
           const SizedBox(
