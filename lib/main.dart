@@ -41,7 +41,7 @@ class _MyAppState extends State<MyApp> {
         translations: LocalString(),
         initialRoute: '/',
         routes: {
-          '/': (context) =>  const CodeEditorScreen(),
+          '/': (context) =>  const LoginScreen(),
           '/main': (context) =>  MainScreen(),
           '/python':(context) =>  const PythonCourseScreen(),
           '/python/1':(context) =>  const PythonTopic1(),
