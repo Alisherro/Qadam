@@ -170,7 +170,7 @@ class _PythonCourseScreenState extends State<PythonCourseScreen> {
                             decoration: const BoxDecoration(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(5)),
-                                color: Colors.black),
+                                color: Colors.white),
                           ),
                           const SizedBox(
                             width: 15,

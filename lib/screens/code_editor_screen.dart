@@ -20,6 +20,7 @@ class _CodeEditorScreenState extends State<CodeEditorScreen> {
         SafeArea(
           child: WebView(
             javascriptMode: JavascriptMode.unrestricted,
+            
             onWebViewCreated: (WebViewController webViewController) {
               _controller.complete(webViewController);
               webViewController.runJavascript(

@@ -57,6 +57,8 @@ class _Quiz1State extends State<Quiz1> {
   int score = 0;
   bool _isLocked = false;
 
+ 
+
   @override
   void initState() {
     super.initState();
@@ -121,7 +123,8 @@ class _Quiz1State extends State<Quiz1> {
   Column buildQuestions(Question question) {
 
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      
       children: [
         const SizedBox(
           height: 32,
@@ -174,10 +177,26 @@ class _Quiz1State extends State<Quiz1> {
                         ResultPage(score: score, number: questions.length))));
           }
         },
-        child: Text(questionNumber < questions.length
-            ? 'Следующий'
-            : 'Посмотреть результат'));
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(questionNumber < questions.length
+              ? 'Следующий'
+              : 'Посмотреть результат', style: const TextStyle(fontSize: 15),),
+        ));
   }
+  
+    getOptionColor(Option option, Question question) {
+    final isSelected = option == question.selectedOption;
+    if (question.isLocked) {
+      if (isSelected) {
+        return option.isCorrect ? Colors.green : Colors.red;
+      } else if (option.isCorrect) {
+        return Colors.green;
+      }
+    }
+    return const Color(0xff4b5363);
+  }
+
 }
 
 class OptionsWidget extends StatelessWidget {
