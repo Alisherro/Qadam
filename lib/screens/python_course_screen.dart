@@ -28,7 +28,7 @@ class _PythonCourseScreenState extends State<PythonCourseScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             gradient: LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.centerRight,
@@ -61,11 +61,11 @@ class _PythonCourseScreenState extends State<PythonCourseScreen> {
                         ),
                         IconButton(
                           icon: isFavorite
-                              ? Icon(
+                              ? const Icon(
                                   Icons.favorite,
                                   color: Colors.white,
                                 )
-                              : Icon(
+                              : const Icon(
                                   Icons.favorite_border,
                                   color: Colors.white,
                                 ),
@@ -89,7 +89,7 @@ class _PythonCourseScreenState extends State<PythonCourseScreen> {
                             Container(
                               width: 70,
                               height: 70,
-                              decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(14)),
                                 image: DecorationImage(
@@ -102,7 +102,7 @@ class _PythonCourseScreenState extends State<PythonCourseScreen> {
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
+                                const Text(
                                   'Python',
                                   style: TextStyle(
                                       color: Colors.white,
@@ -111,8 +111,8 @@ class _PythonCourseScreenState extends State<PythonCourseScreen> {
                                 ),
                                 Row(
                                   children: [
-                                    Icon(Icons.star, color: Colors.white),
-                                    Text(
+                                    const Icon(Icons.star, color: Colors.white),
+                                    const Text(
                                       '4.5',
                                       style: TextStyle(
                                           fontSize: 20, color: Colors.white),
@@ -123,8 +123,8 @@ class _PythonCourseScreenState extends State<PythonCourseScreen> {
                             ),
                           ],
                         ),
-                        Text(
-                          'Тегін',
+                        const Text(
+                          'Бесплтано',
                           style: TextStyle(
                               color: Colors.white,
                               fontSize: 20,
@@ -141,7 +141,7 @@ class _PythonCourseScreenState extends State<PythonCourseScreen> {
               child: Container(
                 decoration: BoxDecoration(
                     color: Theme.of(context).scaffoldBackgroundColor,
-                    borderRadius: BorderRadius.only(
+                    borderRadius: const BorderRadius.only(
                         topLeft: Radius.circular(38),
                         topRight: Radius.circular(38))),
                 width: double.infinity,
@@ -153,13 +153,13 @@ class _PythonCourseScreenState extends State<PythonCourseScreen> {
                     children: [
                       const Text('Учебный план',
                           style: TextStyle(
-                              fontSize: 38, fontWeight: FontWeight.w500)),
+                              fontSize: 34, fontWeight: FontWeight.w500)),
                       const SizedBox(
                         height: 10,
                       ),
                       Row(
                         children: [
-                          Text('5 Сабақ',
+                          Text('5 уроков',
                               style: TextStyle(color: Colors.grey.shade600)),
                           const SizedBox(
                             width: 15,
@@ -167,7 +167,7 @@ class _PythonCourseScreenState extends State<PythonCourseScreen> {
                           Container(
                             width: 10,
                             height: 10,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(5)),
                                 color: Colors.black),
@@ -176,7 +176,7 @@ class _PythonCourseScreenState extends State<PythonCourseScreen> {
                             width: 15,
                           ),
                           Text(
-                            '32 сағат',
+                            '32 минуты',
                             style: TextStyle(color: Colors.grey.shade600),
                           ),
                         ],

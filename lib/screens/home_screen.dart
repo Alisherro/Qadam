@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:qadam/const/code_task.dart';
 import 'package:qadam/widgets/code_tasks_view.dart';
 import '../const/programming_language.dart';
@@ -7,12 +8,54 @@ import '../widgets/learning_section_widget.dart';
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
 
+  final List locale = [
+    {'name': 'Русский', 'locale': const Locale('ru', 'RU')},
+    {'name': 'Қазақша', 'locale': const Locale('kz', 'KZ')},
+  ];
+  updateLanguage(Locale locale) {
+    Get.back();
+    Get.updateLocale(locale);
+  }
+
+  buildLanguageDialog(BuildContext context) {
+    showDialog(
+        context: context,
+        builder: (builder) {
+          return AlertDialog(
+            title: const Text('Выберите язык'),
+            content: Container(
+              width: double.maxFinite,
+              child: ListView.separated(
+                  
+                  shrinkWrap: true,
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: GestureDetector(
+                        child: Text(locale[index]['name']),
+                        onTap: () {
+                          updateLanguage(locale[index]['locale']);
+                        },
+                      ),
+                    );
+                  },
+                  separatorBuilder: (context, index) {
+                    return const Divider(
+                      color: Colors.grey,
+                    );
+                  },
+                  itemCount: locale.length),
+            ),
+          );
+        });
+  }
+
   final List<ProgrammingLanguage> languages = [
     ProgrammingLanguage(
         'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/800px-ISO_C%2B%2B_Logo.svg.png',
         'Python',
-        14,
-        'Оңай',
+        5,
+        'easy'.tr,
         65,
         Colors.indigo,
         Colors.cyan, [
@@ -26,7 +69,7 @@ class HomeScreen extends StatelessWidget {
         'https://s0.rbk.ru/v6_top_pics/media/img/1/60/756533742439601.jpg',
         'Java',
         7,
-        'Оңай',
+        'easy'.tr,
         35,
         const Color(0xff6cc6cb),
         const Color(0xffeae5c9), [
@@ -40,7 +83,7 @@ class HomeScreen extends StatelessWidget {
         'https://www.pngitem.com/pimgs/m/480-4800518_file-dart-logo-dart-programming-language-logo-hd.png',
         'Dart',
         9,
-        'Оңай',
+        'easy'.tr,
         10,
         const Color(0xff7dc387),
         const Color(0xffdbe9ea), [
@@ -54,7 +97,7 @@ class HomeScreen extends StatelessWidget {
         'https://www.freecodecamp.org/news/content/images/2021/10/golang.png',
         'Go',
         15,
-        'Оңай',
+        'easy'.tr,
         100,
         const Color(0xffa18cd1),
         const Color(0xfffbc2eb), [
@@ -67,10 +110,10 @@ class HomeScreen extends StatelessWidget {
   ];
 
   final List<CodeTask> codeTasks = [
-    CodeTask('a+b', 'Оңай', true),
-    CodeTask('Фиббоначи', 'Қиын', false),
-    CodeTask('кері массив', 'Қиын', true),
-    CodeTask('күндер', 'Оңай', true),
+    CodeTask('А+В', 'easy'.tr, true),
+    CodeTask('Фиббоначи', 'hard'.tr, false),
+    CodeTask('task3'.tr, 'hard'.tr, true),
+    CodeTask('Минимум', 'easy'.tr, true),
   ];
 
   @override
@@ -90,18 +133,30 @@ class HomeScreen extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    const Icon(Icons.menu),
+                    ElevatedButton(
+                      onPressed: () {
+                        buildLanguageDialog(context);
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.transparent,
+                      
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 5.0),
+                        child: Text('changelang'.tr, style: const TextStyle(fontSize: 16)),
+                      ),
+                    ),
                     const Icon(Icons.person)
                   ],
                 ),
                 const SizedBox(height: 30),
-                const Text(
-                  'Қайырлы күн',
-                  style: TextStyle(fontSize: 36),
+                Text(
+                  'greeting'.tr,
+                  style: const TextStyle(fontSize: 36),
                 ),
-                const Text(
-                  "Оқығыңыз келетін курсты табыңыз",
-                  style: TextStyle(fontSize: 20),
+                Text(
+                  'greeting2'.tr,
+                  style: const TextStyle(fontSize: 20),
                 ),
                 Container(
                   margin: const EdgeInsets.symmetric(vertical: 30),
@@ -120,9 +175,9 @@ class HomeScreen extends StatelessWidget {
                         color: Theme.of(context).scaffoldBackgroundColor,
                       ),
                       const SizedBox(width: 16),
-                      const Text(
-                        "Іздеу",
-                        style: TextStyle(
+                      Text(
+                        'search'.tr,
+                        style: const TextStyle(
                           fontSize: 18,
                           color: Color(0xFFA0A5BD),
                         ),
@@ -136,12 +191,12 @@ class HomeScreen extends StatelessWidget {
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
+              children: [
                 Text(
-                  'Курстар',
-                  style: TextStyle(fontSize: 24),
+                  'course'.tr,
+                  style: const TextStyle(fontSize: 24),
                 ),
-                Divider(
+                const Divider(
                   thickness: 2,
                 )
               ],
@@ -168,12 +223,12 @@ class HomeScreen extends StatelessWidget {
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
+              children: [
                 Text(
-                  'Тапсырмалар',
-                  style: TextStyle(fontSize: 24),
+                  'tasks'.tr,
+                  style: const TextStyle(fontSize: 24),
                 ),
-                Divider(
+                const Divider(
                   thickness: 2,
                 )
               ],

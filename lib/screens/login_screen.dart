@@ -143,7 +143,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           style: Theme.of(context).textTheme.headline5,
                           children: [
                             TextSpan(
-                              text: ' forget2'.tr,
+                              text: 'forget2'.tr,
                               style: const TextStyle(
                                   color: Colors.blueAccent, fontSize: 18),
                             )

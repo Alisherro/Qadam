@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../const/programming_language.dart';
 import '../widgets/course_progress_indicator.dart';
@@ -73,7 +74,7 @@ class CourseScreen extends StatelessWidget {
         children: [
           const SizedBox(height: 15,),
           Text(
-            'Жалғастыру',
+            'con'.tr,
             style: Theme.of(context).textTheme.headline1,
           ),
           const SizedBox(height: 25),

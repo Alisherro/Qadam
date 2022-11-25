@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:provider/provider.dart';
 
@@ -23,16 +24,16 @@ class BottomNavBar extends StatelessWidget {
               selectedIndex: tabManager.selectedTab,
               onTabChange: tabManager.goToTab,
               gap: 8,
-              tabs: const [
+              tabs:  [
                 GButton(
                   icon: Icons.home_outlined,
-                  text: 'Үй',
+                  text: 'bot1'.tr,
                 ),
                 GButton(
                   icon: Icons.star_outline_rounded,
-                  text: 'Курстар',
+                  text: 'bot2'.tr,
                 ),
-                GButton(
+                const GButton(
                   icon: Icons.terminal,
                   text: 'Терминал',
                 ),

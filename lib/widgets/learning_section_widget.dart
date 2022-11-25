@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../const/programming_language.dart';
 
@@ -44,11 +45,11 @@ class LearningSectionWidget extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      programmingLanguage.name,
+                      programmingLanguage.name.tr,
                       style: const TextStyle(fontSize: 30),
                     ),
                     Text(
-                      programmingLanguage.difficulty,
+                      'easy'.tr,
                       style: const TextStyle(
                         fontSize: 16.0,
                         fontWeight: FontWeight.w400,
@@ -62,7 +63,7 @@ class LearningSectionWidget extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      '${programmingLanguage.lessonsAmount} дәрістер',
+                      '${programmingLanguage.lessonsAmount} ${'lesson'.tr}',
                       textAlign: TextAlign.end,
                       style: const TextStyle(
                         fontSize: 16.0,
