@@ -12,7 +12,7 @@ class HomeScreen extends StatelessWidget {
         'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/800px-ISO_C%2B%2B_Logo.svg.png',
         'Python',
         14,
-        'Easy',
+        'Оңай',
         65,
         Colors.indigo,
         Colors.cyan, [
@@ -26,7 +26,7 @@ class HomeScreen extends StatelessWidget {
         'https://s0.rbk.ru/v6_top_pics/media/img/1/60/756533742439601.jpg',
         'Java',
         7,
-        'Easy',
+        'Оңай',
         35,
         const Color(0xff6cc6cb),
         const Color(0xffeae5c9), [
@@ -40,7 +40,7 @@ class HomeScreen extends StatelessWidget {
         'https://www.pngitem.com/pimgs/m/480-4800518_file-dart-logo-dart-programming-language-logo-hd.png',
         'Dart',
         9,
-        'Easy',
+        'Оңай',
         10,
         const Color(0xff7dc387),
         const Color(0xffdbe9ea), [
@@ -54,7 +54,7 @@ class HomeScreen extends StatelessWidget {
         'https://www.freecodecamp.org/news/content/images/2021/10/golang.png',
         'Go',
         15,
-        'Easy',
+        'Оңай',
         100,
         const Color(0xffa18cd1),
         const Color(0xfffbc2eb), [
@@ -67,10 +67,10 @@ class HomeScreen extends StatelessWidget {
   ];
 
   final List<CodeTask> codeTasks = [
-    CodeTask('a+b', 'Легко', true),
-    CodeTask('Фиббоначи', 'Тяжело', false),
-    CodeTask('Реверс', 'Тяжело', true),
-    CodeTask('Дни', 'Легко', true),
+    CodeTask('a+b', 'Оңай', true),
+    CodeTask('Фиббоначи', 'Қиын', false),
+    CodeTask('кері массив', 'Қиын', true),
+    CodeTask('күндер', 'Оңай', true),
   ];
 
   @override
@@ -91,11 +91,11 @@ class HomeScreen extends StatelessWidget {
               ),
               const SizedBox(height: 30),
               const Text(
-                "Добрый день",style: TextStyle(fontSize: 36),
+                'Қайырлы күн',style: TextStyle(fontSize: 36),
               ),
 
               const Text(
-                "Найдите курс который хотите изучать",
+                "Оқығыңыз келетін курсты табыңыз",
                 style: TextStyle(fontSize: 20),
               ),
               Container(
@@ -115,7 +115,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                     const SizedBox(width: 16),
                     const Text(
-                      "Поиск",
+                      "Іздеу",
                       style: TextStyle(
                         fontSize: 18,
                         color: Color(0xFFA0A5BD),
@@ -130,7 +130,7 @@ class HomeScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: const  [
               Text(
-                'Курсы',
+                'Курстар',
                 style: TextStyle(fontSize: 24),
               ),
               Divider(
@@ -160,7 +160,7 @@ class HomeScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: const [
               Text(
-                'Задачи',
+                'Тапсырмалар',
                 style: TextStyle(fontSize: 24),
               ),
               Divider(

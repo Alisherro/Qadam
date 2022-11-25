@@ -25,8 +25,8 @@ class _ResultPageState extends State<ResultPage> {
 
   @override
   Widget build(BuildContext context) {
-    String cong = 'Поздравляю!';
-    String los = 'Неплохо, но попробуй еще раз!';
+    String cong = 'Құттықтаймыз!';
+    String los = 'Жаман емес, бірақ қайталап көріңіз!';
     return Scaffold(
       body: Center(
         child: Container(
@@ -64,7 +64,7 @@ class _ResultPageState extends State<ResultPage> {
                     borderRadius: BorderRadius.circular(12), // <-- Radius
                   ),
                 ),
-                child: const Text('Продолжить'),
+                child: const Text('Жалғастыру'),
               )
             ],
           ),

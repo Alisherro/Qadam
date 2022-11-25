@@ -26,15 +26,15 @@ class BottomNavBar extends StatelessWidget {
               tabs: const [
                 GButton(
                   icon: Icons.home_outlined,
-                  text: 'Home',
+                  text: 'Үй',
                 ),
                 GButton(
                   icon: Icons.star_outline_rounded,
-                  text: 'Courses',
+                  text: 'Курстар',
                 ),
                 GButton(
                   icon: Icons.terminal,
-                  text: 'Terminal',
+                  text: 'Терминал',
                 ),
               ],
             ),

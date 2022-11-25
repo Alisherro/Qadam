@@ -62,7 +62,7 @@ class LearningSectionWidget extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      '${programmingLanguage.lessonsAmount} lessons',
+                      '${programmingLanguage.lessonsAmount} дәрістер',
                       textAlign: TextAlign.end,
                       style: const TextStyle(
                         fontSize: 16.0,

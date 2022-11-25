@@ -11,7 +11,7 @@ class CourseScreen extends StatelessWidget {
         'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/800px-ISO_C%2B%2B_Logo.svg.png',
         'Python',
         14,
-        'Easy',
+        'Оңай',
         65,
         Colors.indigo,
         Colors.cyan, [
@@ -25,7 +25,7 @@ class CourseScreen extends StatelessWidget {
         'https://s0.rbk.ru/v6_top_pics/media/img/1/60/756533742439601.jpg',
         'Java',
         7,
-        'Easy',
+        'Оңай',
         35,
         const Color(0xff6cc6cb),
         const Color(0xffeae5c9), [
@@ -39,7 +39,7 @@ class CourseScreen extends StatelessWidget {
         'https://www.pngitem.com/pimgs/m/480-4800518_file-dart-logo-dart-programming-language-logo-hd.png',
         'Dart',
         9,
-        'Easy',
+        'Оңай',
         10,
         const Color(0xff7dc387),
         const Color(0xffdbe9ea), [
@@ -53,7 +53,7 @@ class CourseScreen extends StatelessWidget {
         'https://www.freecodecamp.org/news/content/images/2021/10/golang.png',
         'Go',
         15,
-        'Easy',
+        'Оңай',
         100,
         const Color(0xffa18cd1),
         const Color(0xfffbc2eb), [
@@ -71,8 +71,9 @@ class CourseScreen extends StatelessWidget {
       padding: const EdgeInsets.all(16),
       child: ListView(
         children: [
+          const SizedBox(height: 15,),
           Text(
-            'Continue',
+            'Жалғастыру',
             style: Theme.of(context).textTheme.headline1,
           ),
           const SizedBox(height: 25),

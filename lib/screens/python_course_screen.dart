@@ -124,7 +124,7 @@ class _PythonCourseScreenState extends State<PythonCourseScreen> {
                           ],
                         ),
                         Text(
-                          'Бесплатно',
+                          'Тегін',
                           style: TextStyle(
                               color: Colors.white,
                               fontSize: 20,
@@ -159,7 +159,7 @@ class _PythonCourseScreenState extends State<PythonCourseScreen> {
                       ),
                       Row(
                         children: [
-                          Text('14 Уроков',
+                          Text('5 Сабақ',
                               style: TextStyle(color: Colors.grey.shade600)),
                           const SizedBox(
                             width: 15,
@@ -176,7 +176,7 @@ class _PythonCourseScreenState extends State<PythonCourseScreen> {
                             width: 15,
                           ),
                           Text(
-                            '32 часа',
+                            '32 сағат',
                             style: TextStyle(color: Colors.grey.shade600),
                           ),
                         ],
